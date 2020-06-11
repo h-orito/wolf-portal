@@ -8,6 +8,5 @@ automatic_scaling:
   max_idle_instances: 1
   min_pending_latency: 3000ms
   max_pending_latency: automatic
-threadsafe: true
 env_variables:
   JAVA_TOOL_OPTIONS: "-XX:MaxRAM=256m -XX:ActiveProcessorCount=2 -Xmx32m"
