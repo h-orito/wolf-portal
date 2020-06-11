@@ -5,6 +5,7 @@ plugins {
     id("io.spring.dependency-management") version "1.0.9.RELEASE"
     kotlin("jvm") version "1.3.72"
     kotlin("plugin.spring") version "1.3.72"
+    id("com.google.cloud.tools.appengine") version "2.1.0" // 追加
 }
 
 group = "com.ort"
@@ -35,6 +36,8 @@ dependencies {
     implementation("org.dbflute:dbflute-runtime:1.2.1")
     // mysql
     implementation("mysql:mysql-connector-java:5.1.44")
+    // gae
+    implementation("com.google.appengine:appengine-api-1.0-sdk:+")  // 追加
 
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
@@ -50,5 +53,12 @@ tasks.withType<KotlinCompile> {
     kotlinOptions {
         freeCompilerArgs = listOf("-Xjsr305=strict")
         jvmTarget = "1.8"
+    }
+}
+
+appengine {
+    deploy {
+        projectId = "wolf-portal"
+        version = "v1-0-0"
     }
 }
