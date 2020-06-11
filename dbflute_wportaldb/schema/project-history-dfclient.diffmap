@@ -1,0 +1,457 @@
+map:{
+    ; 2019/01/30 16:30:53 = map:{
+        ; diffDate = 2019/01/30 16:30:53
+        ; diffAuthor = h-orito
+        ; diffGitBranch = feature/player
+        ; tableDiff = map:{
+            ; village_player_stats = map:{
+                ; tableName = village_player_stats
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; WINLOSE_CODE = map:{
+                        ; columnName = WINLOSE_CODE
+                        ; diffType = CHANGE
+                        ; notNullDiff = map:{
+                            ; next = false
+                            ; previous = true
+                        }
+                    }
+                    ; LIFE = map:{
+                        ; columnName = LIFE
+                        ; diffType = CHANGE
+                        ; notNullDiff = map:{
+                            ; next = false
+                            ; previous = true
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ; 2019/01/28 14:27:37 = map:{
+        ; diffDate = 2019/01/28 14:27:37
+        ; diffAuthor = h-orito
+        ; diffGitBranch = feature/player
+        ; tableDiff = map:{
+            ; village = map:{
+                ; tableName = village
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; VILLAGE_NO = map:{
+                        ; columnName = VILLAGE_NO
+                        ; diffType = CHANGE
+                        ; dbTypeDiff = map:{
+                            ; next = INT UNSIGNED
+                            ; previous = VARCHAR
+                        }
+                        ; notNullDiff = map:{
+                            ; next = true
+                            ; previous = false
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ; 2019/01/25 18:17:30 = map:{
+        ; diffDate = 2019/01/25 18:17:30
+        ; diffAuthor = h-orito
+        ; diffGitBranch = feature/player
+        ; tableDiff = map:{
+            ; village = map:{
+                ; tableName = village
+                ; diffType = CHANGE
+                ; foreignKeyDiff = map:{
+                    ; FK_VILLAGE_COUNTRY = map:{
+                        ; constraintName = FK_VILLAGE_COUNTRY
+                        ; diffType = CHANGE
+                        ; columnDiff = map:{
+                            ; next = COUNTRY_ID
+                            ; previous = VILLAGE_ID
+                        }
+                    }
+                }
+                ; indexDiff = map:{
+                    ; FK_VILLAGE_COUNTRY = map:{
+                        ; constraintName = FK_VILLAGE_COUNTRY
+                        ; diffType = ADD
+                    }
+                }
+            }
+        }
+    }
+    ; 2019/01/25 18:00:00 = map:{
+        ; diffDate = 2019/01/25 18:00:00
+        ; diffAuthor = h-orito
+        ; diffGitBranch = feature/player
+        ; tableDiff = map:{
+            ; country_player = map:{
+                ; tableName = country_player
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; COUNTRY_PLAYER_ID = map:{
+                        ; columnName = COUNTRY_PLAYER_ID
+                        ; diffType = CHANGE
+                        ; autoIncrementDiff = map:{
+                            ; next = true
+                            ; previous = false
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ; 2019/01/24 16:49:15 = map:{
+        ; diffDate = 2019/01/24 16:49:15
+        ; diffAuthor = h-orito
+        ; diffGitBranch = feature/player
+        ; tableDiff = map:{
+            ; village_player_stats = map:{
+                ; tableName = village_player_stats
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; LIFE = map:{
+                        ; columnName = LIFE
+                        ; diffType = ADD
+                    }
+                }
+            }
+        }
+    }
+    ; 2019/01/24 10:23:42 = map:{
+        ; diffDate = 2019/01/24 10:23:42
+        ; tableCount = map:{
+            ; next = 11
+            ; previous = 6
+        }
+        ; diffAuthor = h-orito
+        ; diffGitBranch = feature/player
+        ; tableDiff = map:{
+            ; country = map:{
+                ; tableName = country
+                ; diffType = ADD
+            }
+            ; country_player = map:{
+                ; tableName = country_player
+                ; diffType = ADD
+            }
+            ; country_progress = map:{
+                ; tableName = country_progress
+                ; diffType = ADD
+            }
+            ; country_progress_detail = map:{
+                ; tableName = country_progress_detail
+                ; diffType = ADD
+            }
+            ; country_recruitment = map:{
+                ; tableName = country_recruitment
+                ; diffType = ADD
+            }
+            ; country_recruitment_detail = map:{
+                ; tableName = country_recruitment_detail
+                ; diffType = ADD
+            }
+            ; player = map:{
+                ; tableName = player
+                ; diffType = ADD
+            }
+            ; recruit_stats = map:{
+                ; tableName = recruit_stats
+                ; diffType = ADD
+            }
+            ; village = map:{
+                ; tableName = village
+                ; diffType = ADD
+            }
+            ; village_player_stats = map:{
+                ; tableName = village_player_stats
+                ; diffType = ADD
+            }
+            ; winlose = map:{
+                ; tableName = winlose
+                ; diffType = ADD
+            }
+            ; COUNTRY = map:{
+                ; tableName = COUNTRY
+                ; diffType = DELETE
+            }
+            ; COUNTRY_PROGRESS = map:{
+                ; tableName = COUNTRY_PROGRESS
+                ; diffType = DELETE
+            }
+            ; COUNTRY_PROGRESS_DETAIL = map:{
+                ; tableName = COUNTRY_PROGRESS_DETAIL
+                ; diffType = DELETE
+            }
+            ; COUNTRY_RECRUITMENT = map:{
+                ; tableName = COUNTRY_RECRUITMENT
+                ; diffType = DELETE
+            }
+            ; COUNTRY_RECRUITMENT_DETAIL = map:{
+                ; tableName = COUNTRY_RECRUITMENT_DETAIL
+                ; diffType = DELETE
+            }
+            ; RECRUIT_STATS = map:{
+                ; tableName = RECRUIT_STATS
+                ; diffType = DELETE
+            }
+        }
+    }
+    ; 2019/01/16 19:11:01 = map:{
+        ; diffDate = 2019/01/16 19:11:01
+        ; tableCount = map:{
+            ; next = 6
+            ; previous = 5
+        }
+        ; diffAuthor = hitoshi
+        ; diffGitBranch = master
+        ; tableDiff = map:{
+            ; RECRUIT_STATS = map:{
+                ; tableName = RECRUIT_STATS
+                ; diffType = ADD
+            }
+        }
+    }
+    ; 2018/11/20 23:22:52 = map:{
+        ; diffDate = 2018/11/20 23:22:52
+        ; diffAuthor = hitoshi
+        ; diffGitBranch = master
+        ; tableDiff = map:{
+            ; COUNTRY = map:{
+                ; tableName = COUNTRY
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; IS_DISPLAY = map:{
+                        ; columnName = IS_DISPLAY
+                        ; diffType = ADD
+                    }
+                }
+            }
+        }
+    }
+    ; 2018/11/18 01:13:11 = map:{
+        ; diffDate = 2018/11/18 01:13:11
+        ; diffAuthor = hitoshi
+        ; diffGitBranch = master
+        ; tableDiff = map:{
+            ; COUNTRY_PROGRESS_DETAIL = map:{
+                ; tableName = COUNTRY_PROGRESS_DETAIL
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; ITEM_VALUE = map:{
+                        ; columnName = ITEM_VALUE
+                        ; diffType = CHANGE
+                        ; columnSizeDiff = map:{
+                            ; next = 1000
+                            ; previous = 100
+                        }
+                    }
+                }
+            }
+            ; COUNTRY_RECRUITMENT_DETAIL = map:{
+                ; tableName = COUNTRY_RECRUITMENT_DETAIL
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; ITEM_VALUE = map:{
+                        ; columnName = ITEM_VALUE
+                        ; diffType = CHANGE
+                        ; columnSizeDiff = map:{
+                            ; next = 1000
+                            ; previous = 100
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ; 2018/11/17 23:55:37 = map:{
+        ; diffDate = 2018/11/17 23:55:37
+        ; diffAuthor = hitoshi
+        ; diffGitBranch = master
+        ; tableDiff = map:{
+            ; COUNTRY = map:{
+                ; tableName = COUNTRY
+                ; diffType = ADD
+            }
+            ; COUNTRY_PROGRESS = map:{
+                ; tableName = COUNTRY_PROGRESS
+                ; diffType = ADD
+            }
+            ; COUNTRY_PROGRESS_DETAIL = map:{
+                ; tableName = COUNTRY_PROGRESS_DETAIL
+                ; diffType = ADD
+            }
+            ; COUNTRY_RECRUITMENT = map:{
+                ; tableName = COUNTRY_RECRUITMENT
+                ; diffType = ADD
+            }
+            ; COUNTRY_RECRUITMENT_DETAIL = map:{
+                ; tableName = COUNTRY_RECRUITMENT_DETAIL
+                ; diffType = ADD
+            }
+            ; country = map:{
+                ; tableName = country
+                ; diffType = DELETE
+            }
+            ; country_progress = map:{
+                ; tableName = country_progress
+                ; diffType = DELETE
+            }
+            ; country_progress_detail = map:{
+                ; tableName = country_progress_detail
+                ; diffType = DELETE
+            }
+            ; country_recruitment = map:{
+                ; tableName = country_recruitment
+                ; diffType = DELETE
+            }
+            ; country_recruitment_detail = map:{
+                ; tableName = country_recruitment_detail
+                ; diffType = DELETE
+            }
+        }
+    }
+    ; 2018/11/16 17:03:19 = map:{
+        ; diffDate = 2018/11/16 17:03:19
+        ; tableCount = map:{
+            ; next = 5
+            ; previous = 3
+        }
+        ; diffAuthor = h-orito
+        ; diffGitBranch = master
+        ; tableDiff = map:{
+            ; country_progress = map:{
+                ; tableName = country_progress
+                ; diffType = ADD
+            }
+            ; country_progress_detail = map:{
+                ; tableName = country_progress_detail
+                ; diffType = ADD
+            }
+        }
+    }
+    ; 2018/11/15 19:17:13 = map:{
+        ; diffDate = 2018/11/15 19:17:13
+        ; diffAuthor = h-orito
+        ; diffGitBranch = master
+        ; tableDiff = map:{
+            ; country = map:{
+                ; tableName = country
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; LAST_UPDATE_DATETIME = map:{
+                        ; columnName = LAST_UPDATE_DATETIME
+                        ; diffType = ADD
+                    }
+                    ; REGISTER_DATETIME = map:{
+                        ; columnName = REGISTER_DATETIME
+                        ; diffType = ADD
+                    }
+                    ; REGISTER_TRACE = map:{
+                        ; columnName = REGISTER_TRACE
+                        ; diffType = ADD
+                    }
+                    ; UPDATE_DATETIME = map:{
+                        ; columnName = UPDATE_DATETIME
+                        ; diffType = ADD
+                    }
+                    ; UPDATE_TRACE = map:{
+                        ; columnName = UPDATE_TRACE
+                        ; diffType = ADD
+                    }
+                }
+            }
+        }
+    }
+    ; 2018/11/15 17:35:28 = map:{
+        ; diffDate = 2018/11/15 17:35:28
+        ; diffAuthor = h-orito
+        ; diffGitBranch = master
+        ; tableDiff = map:{
+            ; country = map:{
+                ; tableName = country
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; COUNTRY_CRAWL_URL = map:{
+                        ; columnName = COUNTRY_CRAWL_URL
+                        ; diffType = DELETE
+                    }
+                }
+            }
+        }
+    }
+    ; 2018/11/15 17:07:10 = map:{
+        ; diffDate = 2018/11/15 17:07:10
+        ; diffAuthor = h-orito
+        ; diffGitBranch = master
+        ; tableDiff = map:{
+            ; country_recruitment = map:{
+                ; tableName = country_recruitment
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; COUNTRY_RECRUITMENT_ID = map:{
+                        ; columnName = COUNTRY_RECRUITMENT_ID
+                        ; diffType = ADD
+                    }
+                    ; COUNTRY_RECRUITMENT_HEADER_ID = map:{
+                        ; columnName = COUNTRY_RECRUITMENT_HEADER_ID
+                        ; diffType = DELETE
+                    }
+                }
+                ; primaryKeyDiff = map:{
+                    ; PRIMARY = map:{
+                        ; constraintName = PRIMARY
+                        ; diffType = CHANGE
+                        ; columnDiff = map:{
+                            ; next = COUNTRY_RECRUITMENT_ID
+                            ; previous = COUNTRY_RECRUITMENT_HEADER_ID
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ; 2018/11/15 16:31:47 = map:{
+        ; diffDate = 2018/11/15 16:31:47
+        ; diffAuthor = h-orito
+        ; diffGitBranch = master
+        ; tableDiff = map:{
+            ; country = map:{
+                ; tableName = country
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; COUNTRY_CRAWL_URL = map:{
+                        ; columnName = COUNTRY_CRAWL_URL
+                        ; diffType = ADD
+                    }
+                    ; COUNTRY_CRWAL_URL = map:{
+                        ; columnName = COUNTRY_CRWAL_URL
+                        ; diffType = DELETE
+                    }
+                }
+            }
+        }
+    }
+    ; 2018/11/14 15:11:18 = map:{
+        ; diffDate = 2018/11/14 15:11:18
+        ; tableCount = map:{
+            ; next = 3
+            ; previous = 0
+        }
+        ; diffAuthor = h-orito
+        ; tableDiff = map:{
+            ; country = map:{
+                ; tableName = country
+                ; diffType = ADD
+            }
+            ; country_recruitment = map:{
+                ; tableName = country_recruitment
+                ; diffType = ADD
+            }
+            ; country_recruitment_detail = map:{
+                ; tableName = country_recruitment_detail
+                ; diffType = ADD
+            }
+        }
+    }
+}

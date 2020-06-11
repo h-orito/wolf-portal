@@ -30,3 +30,6 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### dbflute ###
+dbflute_wportaldb/log/*

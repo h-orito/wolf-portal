@@ -1,0 +1,12 @@
+
+* * * * * * * * * *
+*                 *
+* Tsv Data Result *
+*                 *
+* * * * * * * * * *
+data-directory: playsql/data/ut/tsv/UTF-8
+
+01-PLAYER.tsv (1060)
+02-VILLAGE.tsv (233)
+03-COUNTRY_PLAYER.tsv (1081)
+04-VILLAGE_PLAYER_STATS.tsv (3200)
