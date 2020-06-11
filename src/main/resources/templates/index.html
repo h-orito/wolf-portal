@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/layout}">
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+</head>
+
+<body>
+<div class="container">
+    <div layout:fragment="content">
+        <div id="wrapper">
+            <div class="col-sm-12 col-xs-12">
+                <h1 class="h4">このサイトは</h1>
+                <p>オンラインで人狼ゲームができるサイト・アプリを紹介しています。</p>
+            </div>
+            <div class="col-sm-12 col-xs-12" style="margin-top: 20px;">
+                <h1 class="h4">サイトコンテンツ</h1>
+                <h2 class="h5" style="margin-top: 20px;">
+                    <a th:href="@{/beginner}">人狼ゲームを始める方向け</a>
+                </h2>
+                <p>ルール説明や初心者に優しい企画村を紹介しています。</p>
+                <h2 class="h5" style="margin-top: 20px;">
+                    <a th:href="@{/recruitment}">各国開催状況</a>
+                </h2>
+                <p>各国の開催中の村を一覧表示します。<br>飛び込み参加や観戦にお役立てください。</p>
+                <h2 class="h5" style="margin-top: 20px;">
+                    <a th:href="@{/site-list}">人狼サイト・アプリ一覧</a>
+                </h2>
+                <p>オンラインで人狼ゲームができるサイト・アプリを一覧表示します。<br>サイトごとの特徴の把握やログ読み、村建ての際にお役立てください。</p>
+                <h2 class="h5" style="margin-top: 20px;">
+                    <a th:href="@{/village-list}">村検索</a>
+                </h2>
+                <p>各国横断での村検索ができます。</p>
+                <h2 class="h5" style="margin-top: 20px;">
+                    <a th:href="@{/stats}">戦績・村・再戦情報</a>
+                </h2>
+                <p>一部長期人狼サイトのユーザ情報、村情報、再戦情報を表示します。<br>サイトを跨いだ再戦情報を確認する際にお役立てください。</p>
+                <h2 class="h5" style="margin-top: 20px;">
+                    <a th:href="@{/link}">オンライン人狼関連リンク</a>
+                </h2>
+                <p>オンライン人狼関連のまとめサイトやブログを表示します。</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

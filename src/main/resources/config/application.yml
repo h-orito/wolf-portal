@@ -1,0 +1,20 @@
+spring:
+  thymeleaf:
+    cache: false
+    mode: HTML
+  messages:
+    basename: messages
+    cache-seconds: -1
+    encoding: UTF-8
+server:
+  port: 8080
+  servlet:
+    context-path: /wolf-portal
+    session:
+      timeout: 86400
+logging:
+  level:
+    org.springframework: INFO
+    root: INFO
+    org.seasar.dbflute: ERROR
+  file: /var/log/wolf-portal/tomcat.log

@@ -1,0 +1,24 @@
+th {
+	background-color: rgba(0, 0, 0, 0.075);
+}
+
+.village-icon {
+	padding: 0 2px 0 2px;
+	margin-right: 1px;
+	border-radius: 2px;
+}
+
+.village-icon-danger {
+	border: 1px solid #d9230f;
+	color: #d9230f;
+}
+
+.village-icon-warn {
+	border: 1px solid #b0b040;
+	color: #b0b040;
+}
+
+.village-icon-info {
+	border: 1px solid #0f23d9;
+	color: #0f23d9;
+}
