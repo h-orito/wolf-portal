@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/layout}">
+<head>
+    <meta charset="utf-8"/>
+    <title>村検索</title>
+</head>
+
+<body>
+<div class="container">
+    <div layout:fragment="content">
+        <div id="wrapper">
+            <div class="col-sm-12 col-xs-12">
+                <h1 class="h3">村検索</h1>
+                <p>
+                    各国横断での村検索ができます。<br>「企画名はわかるけどどこで開催されているかわからない・・」などの際にお役立てください。<br>
+                    終了した村については<a th:href="@{/stats}" target="_blank">各国戦績</a>にある国のみ対応しているためご注意ください。<br>
+                </p>
+            </div>
+            <div class="col-sm-12 col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">検索</div>
+                    <div class="panel-body">
+                        <form method="get" action="" th:action="@{/village-list}" id="search-form" th:object="${searchForm}">
+                            <div class="form-group">
+                                <label>村名 (部分一致)</label>
+                                <input type="text" th:field="*{villageName}" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>役職名 (完全一致)</label>
+                                <input type="text" th:field="*{skillName}" class="form-control">
+                                <p class="small">役職名を検索条件に加えると、終了した村からのみの検索となります。</p>
+                            </div>
+                            <button type="submit" class="btn btn-primary pull-right">検索</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-xs-12">
+                <h2 class="h4">募集中の村</h2>
+            </div>
+            <div class="col-sm-12 col-xs-12">
+                <p th:if="${recruitmentCountryList.size() == 0}">指定した条件の村はありません。</p>
+                <div class="table-responsive small clearfix" th:if="${recruitmentCountryList.size() > 0}" style="margin-bottom: 20px;">
+                    <table class="table table-bordered table-condensed">
+                        <th:block th:with="villageList = ${country.recruitVillageList}" th:each="country: ${recruitmentCountryList}">
+                            <thead>
+                            <tr>
+                                <th><a th:href="${country.countryUrl}" target="_blank" class="" th:text="${country.countryName}">国名</a></th>
+                                <th>人数（見学人数）</th>
+                                <th th:text="${country.countryName == 'JinroLite' ? '開始予定' : '更新時間'}"></th>
+                                <th>更新間隔</th>
+                                <th>状態</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="village : ${villageList}">
+                                <td>
+                                    <a th:href="${village.itemMap['village_url']}" target="_blank"
+                                       th:text="${village.itemMap['village_name']}"></a>
+                                    <th:block th:if="${village.itemMap['village_info_url'] != null}">
+                                        (<a th:href="${village.itemMap['village_info_url']}" target="_blank"
+                                            th:text="${country.countryName == '人狼BBS:G' ? 'ぎじろぐ' : '情報'}"></a>)
+                                    </th:block>
+                                </td>
+                                <td class="nowrap">
+                                    <span th:text="${village.itemMap['participate_status']}"></span><span
+                                        th:if="${village.itemMap['spectate_status']}"
+                                        th:text="${'（' + village.itemMap['spectate_status'] + '）'}"></span>
+                                </td>
+                                <td class="nowrap" th:text="${village.itemMap['daychange_datetime']}"></td>
+                                <td class="nowrap" th:text="${village.itemMap['daychange_interval']}"></td>
+                                <td class="nowrap" th:text="${village.itemMap['village_status']}"></td>
+                            </tr>
+                            </tbody>
+                        </th:block>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-xs-12">
+                <h2 class="h4">進行中の村</h2>
+            </div>
+            <div class="col-sm-12 col-xs-12">
+                <p th:if="${progressCountryList.size() == 0}">指定した条件の村はありません。</p>
+                <div class="table-responsive small clearfix" th:if="${progressCountryList.size() > 0}" style="margin-bottom: 20px;">
+                    <table class="table table-bordered table-condensed">
+                        <th:block th:with="villageList = ${country.progressVillageList}" th:each="country: ${progressCountryList}">
+                            <thead>
+                            <tr>
+                                <th><a th:href="${country.countryUrl}" target="_blank" class="" th:text="${country.countryName}">国名</a></th>
+                                <th>人数（見学人数）</th>
+                                <th th:text="${country.countryName == 'JinroLite' ? '開始予定' : '更新時間'}"></th>
+                                <th>更新間隔</th>
+                                <th>状態</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="village : ${villageList}">
+                                <td>
+                                    <a th:href="${village.itemMap['village_url']}" target="_blank"
+                                       th:text="${village.itemMap['village_name']}"></a>
+                                    <th:block th:if="${village.itemMap['village_info_url'] != null}">
+                                        (<a th:href="${village.itemMap['village_info_url']}" target="_blank"
+                                            th:text="${country.countryName == '人狼BBS:G' ? 'ぎじろぐ' : '情報'}"></a>)
+                                    </th:block>
+                                </td>
+                                <td class="nowrap">
+                                    <span th:text="${village.itemMap['participate_status']}"></span><span
+                                        th:if="${village.itemMap['spectate_status']}"
+                                        th:text="${'（' + village.itemMap['spectate_status'] + '）'}"></span>
+                                </td>
+                                <td class="nowrap" th:text="${village.itemMap['daychange_datetime']}"></td>
+                                <td class="nowrap" th:text="${village.itemMap['daychange_interval']}"></td>
+                                <td class="nowrap" th:text="${village.itemMap['village_status']}"></td>
+                            </tr>
+                            </tbody>
+                        </th:block>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-xs-12">
+                <h2 class="h4">終了した村</h2>
+            </div>
+            <div class="col-sm-12 col-xs-12">
+                <p th:if="${villageList.size() == 0}">指定した条件の村はありません。</p>
+                <div id="village-list" class="table-responsive small" th:if="${villageList.size() > 0}">
+                    <table class="table table-striped table-condensed table-bordered">
+                        <thead>
+                        <tr>
+                            <th>村名</th>
+                            <th>開始日時</th>
+                            <th>終了日時</th>
+                            <th>勝利陣営名</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="v : ${villageList}">
+                            <td>
+                                <a th:href="@{/stats/country/{countryId}/village/{villageId}(countryId=${v.countryId}, villageId=${v.villageId})}"
+                                   th:text="${v.villageName}">ほげ村</a> (<a th:href="${v.villageUrl}" target="_blank">本国</a>)
+                            </td>
+                            <td>
+                                <span layout:replace="~{parts/stats-datetime::date(${v.villageStartDatetime})}"></span>
+                            </td>
+                            <td>
+                                <span layout:replace="~{parts/stats-datetime::date(${v.villageEndDatetime})}"></span>
+                            </td>
+                            <td th:text="${v.winCampName}">人狼陣営</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</html>

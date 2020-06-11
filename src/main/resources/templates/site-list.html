@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/layout}">
+<head>
+    <meta charset="utf-8"/>
+    <title>人狼サイト・アプリ一覧</title>
+    <style>
+#sitelist th, #sitelist td {
+	text-align: center;
+	vertical-align: middle;
+}
+
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div layout:fragment="content">
+        <div id="wrapper">
+            <div class="col-sm-12 col-xs-12">
+                <h1 class="h4">人狼サイト・アプリ一覧</h1>
+                <p>
+                    オンラインで人狼ゲームができるサイト・アプリの紹介ページです。<br>サイトごとの特徴の把握やログ読み、村建ての際にお役立てください。
+                </p>
+            </div>
+            <div class="col-sm-12 col-xs-12">
+                <div id="sitelist" class="table-responsive small">
+                    <table class="table table-striped table-condensed table-bordered">
+                        <thead>
+                        <tr>
+                            <th rowspan="2" style="text-align: left;">サイト・アプリ名</th>
+                            <th colspan="2">種別</th>
+                            <th colspan="3">プラットフォーム</th>
+                            <th rowspan="2">備考</th>
+                        </tr>
+                        <tr>
+                            <th>長期</th>
+                            <th>短期</th>
+                            <th>Web<br>ブラウザ
+                            </th>
+                            <th>iPhone<br>アプリ
+                            </th>
+                            <th>Android<br>アプリ
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!-- HOWLING WOLF -->
+                        <tr>
+                            <td style="text-align: left;">
+                                <a layout:replace="~{parts/external-link::anchor('HOWLING WOLF', 'https://howling-wolf.com/')}"></a>
+                            </td>
+                            <td>○</td>
+                            <td></td>
+                            <td>○</td>
+                            <td></td>
+                            <td></td>
+                            <td style="text-align: left;">
+                                1日＝24h固定、自動村建てのみ<br>2020年6月に公開されたサーバ<br>当サイト管理人が運営している
+                            </td>
+                        </tr>
+                        <!-- 人狼BBS:G -->
+                        <tr>
+                            <td style="text-align: left;">
+                                <a layout:replace="~{parts/external-link::anchor('人狼BBS:G', 'http://www.wolfg.x0.com/')}"></a>
+                            </td>
+                            <td>○</td>
+                            <td></td>
+                            <td>○</td>
+                            <td></td>
+                            <td></td>
+                            <td style="text-align: left;">
+                                1日＝24h固定、自動村建てのみ<br>オンライン人狼の先駆けとなったサーバ<br>2020年1月末に新規村作成が終了した
+                            </td>
+                        </tr>
+                        <!-- 月狼国 -->
+                        <tr>
+                            <td style="text-align: left;">
+                                <a layout:replace="~{parts/external-link::anchor('人狼物語 月狼国 side:M', 'https://managarmr.sakura.ne.jp/sow.cgi')}"></a>
+                            </td>
+                            <td>○</td>
+                            <td></td>
+                            <td>○</td>
+                            <td></td>
+                            <td></td>
+                            <td rowspan="3" style="text-align: left;">
+                                システム面が充実している<br>side:M 800pt～3000pt村用のサーバー<br> side:H 800pt以下小発言村のサーバー<br> side:E 喉設定を問わずに使えるサーバー
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;">
+                                <a layout:replace="~{parts/external-link::anchor('人狼物語 月狼国 side:H', 'https://marchocias.xsrv.jp/sow.cgi')}"></a>
+                            </td>
+                            <td>○</td>
+                            <td></td>
+                            <td>○</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;">
+                                <a layout:replace="~{parts/external-link::anchor('人狼物語 月狼国 side:E', 'https://hrodvitnir.sakura.ne.jp/sow.cgi')}"></a>
+                            </td>
+                            <td>○</td>
+                            <td></td>
+                            <td>○</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <!-- 三日月国 -->
+                        <tr>
+                            <td style="text-align: left;">
+                                <a layout:replace="~{parts/external-link::anchor('人狼物語 三日月国', 'http://www.moonpupa.jp/wolf/sow/sow.cgi')}"></a>
+                            </td>
+                            <td>○</td>
+                            <td></td>
+                            <td>○</td>
+                            <td></td>
+                            <td></td>
+                            <td style="text-align: left;">
+                                追加役職が豊富でカオスな編成を楽しめる<br>「便利に使いたい方へ」の機能リンクでインターフェースを自分好みにカスタマイズ可能
+                            </td>
+                        </tr>
+                        <!-- 三日月国 幻影領域 -->
+                        <tr>
+                            <td style="text-align: left;">
+                                <a layout:replace="~{parts/external-link::anchor('人狼物語 三日月国 幻影領域', 'http://hazymoon.sakura.ne.jp/wolf/sow/sow.cgi')}"></a>
+                            </td>
+                            <td>○</td>
+                            <td></td>
+                            <td>○</td>
+                            <td></td>
+                            <td></td>
+                            <td style="text-align: left;">
+                                三日月国の派生<br>本領域と比べサーバは貧弱とのこと
+                            </td>
+                        </tr>
+                        <!-- 三日月国 泡沫領域 -->
+                        <tr>
+                            <td style="text-align: left;">
+                                <a layout:replace="~{parts/external-link::anchor('人狼物語 三日月国 泡沫領域', 'http://heteromoon.net/wolf/foam/sow.cgi')}"></a>
+                            </td>
+                            <td>○</td>
+                            <td></td>
+                            <td>○</td>
+                            <td></td>
+                            <td></td>
+                            <td style="text-align: left;">
+                                三日月国の派生<br>本領域と同程度のサーバスペックであるが、人狼異聞の開始と共に村建てができなくなるとのこと
+                            </td>
+                        </tr>
+                        <!-- 薔薇の下国 -->
+                        <tr>
+                            <td style="text-align: left;">
+                                <a layout:replace="~{parts/external-link::anchor('人狼物語 薔薇の下国', 'http://lup.lunare.org/sow/sow.cgi')}"></a>
+                            </td>
+                            <td>○</td>
+                            <td></td>
+                            <td>○</td>
+                            <td></td>
+                            <td></td>
+                            <td style="text-align: left;">
+                                細かく表情が変えられる人狼BBSキャラセットがある<br>固有特殊役職あり
+                            </td>
+                        </tr>
+                        <!-- 千夜国 -->
+                        <tr>
+                            <td style="text-align: left;">
+                                <a layout:replace="~{parts/external-link::anchor('人狼物語 千夜国', 'http://chitose-azure.sakura.ne.jp/alf-laylah/sow/sow.cgi')}"></a>
+                            </td>
+                            <td>○</td>
+                            <td></td>
+                            <td>○</td>
+                            <td></td>
+                            <td></td>
+                            <td style="text-align: left;">役職配分や発言制限にG国や汝人狼也に合わせるための設定がある</td>
+                        </tr>
+                        <!-- 深海国 -->
+                        <tr>
+                            <td style="text-align: left;">
+                                <a layout:replace="~{parts/external-link::anchor('人狼物語 深海国（青）', 'http://chaos-circle.jp/abyss/sow.cgi')}"></a>
+                            </td>
+                            <td>○</td>
+                            <td></td>
+                            <td>○</td>
+                            <td></td>
+                            <td></td>
+                            <td style="text-align: left;" rowspan="2">村建てオプションで設定できる項目が多く、独自役職も存在する</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;">
+                                <a layout:replace="~{parts/external-link::anchor('人狼物語 深海国（赤）', 'http://red-abyss.net/abyss/sow.cgi')}"></a>
+                            </td>
+                            <td>○</td>
+                            <td></td>
+                            <td>○</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <!-- 瓜科国 -->
+                        <tr>
+                            <td style="text-align: left;">
+                                <a layout:replace="~{parts/external-link::anchor('人狼物語 瓜科国', 'http://melon-cirrus.sakura.ne.jp/sow/')}"></a>
+                            </td>
+                            <td>○</td>
+                            <td></td>
+                            <td>○</td>
+                            <td></td>
+                            <td></td>
+                            <td style="text-align: left;">
+                                キャラセット、固有役職、村建てオプションが豊富<br>マニュアルも充実している
+                            </td>
+                        </tr>
+                        <!-- 執事国 -->
+                        <tr>
+                            <td style="text-align: left;">
+                                <a layout:replace="~{parts/external-link::anchor('人狼物語 執事国', 'http://sebas.chips.jp/sow/sow.cgi')}"></a>
+                            </td>
+                            <td>○</td>
+                            <td></td>
+                            <td>○</td>
+                            <td></td>
+                            <td></td>
+                            <td style="text-align: left;">日本人キャラのオリジナルキャラセットがある</td>
+                        </tr>
+                        <!-- リア充国 -->
+                        <tr>
+                            <td style="text-align: left;">
+                                <a layout:replace="~{parts/external-link::anchor('人狼物語 リア充国', 'http://real.gunjobiyori.com/sow.cgi')}"></a>
+                            </td>
+                            <td>○</td>
+                            <td></td>
+                            <td>○</td>
+                            <td></td>
+                            <td></td>
+                            <td style="text-align: left;">
+                                忙しい人でも参加できる人狼を目指している国<br>リアルをより大事にするための設定や推奨ルールがある
+                            </td>
+                        </tr>
+                        <!-- 議事国 -->
+                        <tr>
+                            <td style="text-align: left;">
+                                <a layout:replace="~{parts/external-link::anchor('人狼議事 perjury rulez', 'http://perjury.rulez.jp/sow.cgi')}"></a>
+                            </td>
+                            <td>○</td>
+                            <td></td>
+                            <td>○</td>
+                            <td></td>
+                            <td></td>
+                            <td style="text-align: left;" rowspan="4">
+                                RP村が盛んで固有役職が非常に豊富<br>perjury rulez: RP村専用サーバー(企画村予定表参考)<br>xebec: RP村専用サーバー(突発可)<br>crazy:
+                                RP村専用サーバー(突発可・個人間囁きあり)<br>ciel:
+                                RP村専用サーバー(突発可)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;">
+                                <a layout:replace="~{parts/external-link::anchor('人狼議事 xebec', 'http://xebec.x0.to/xebec/sow.cgi')}"></a>
+                            </td>
+                            <td>○</td>
+                            <td></td>
+                            <td>○</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;">
+                                <a layout:replace="~{parts/external-link::anchor('人狼議事 crazy', 'http://crazy-crazy.sakura.ne.jp/crazy/sow.cgi')}"></a>
+                            </td>
+                            <td>○</td>
+                            <td></td>
+                            <td>○</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;">
+                                <a layout:replace="~{parts/external-link::anchor('人狼議事 ciel', 'http://ciel.moo.jp/cheat/sow.cgi')}"></a>
+                            </td>
+                            <td>○</td>
+                            <td></td>
+                            <td>○</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                        <thead>
+                        <tr>
+                            <th rowspan="2" style="text-align: left;">サイト・アプリ名</th>
+                            <th colspan="2">種別</th>
+                            <th colspan="3">プラットフォーム</th>
+                            <th rowspan="2">備考</th>
+                        </tr>
+                        <tr>
+                            <th>長期</th>
+                            <th>短期</th>
+                            <th>Web<br>ブラウザ
+                            </th>
+                            <th>iPhone<br>アプリ
+                            </th>
+                            <th>Android<br>アプリ
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!-- ねじれ天国 -->
+                        <tr>
+                            <td style="text-align: left;">
+                                <a layout:replace="~{parts/external-link::anchor('ねじれ天国', 'http://nejiten.halfmoon.jp/')}"></a>
+                            </td>
+                            <td>○</td>
+                            <td>○</td>
+                            <td>○</td>
+                            <td></td>
+                            <td></td>
+                            <td style="text-align: left;">
+                                長期も遊べるが短期向け<br>役職が非常に豊富でおそらく全人狼サーバで1位<br>闇鍋設定なども豊富で、99人村が開催されることも
+                            </td>
+                        </tr>
+                        <!-- ケル国 -->
+                        <tr>
+                            <td style="text-align: left;">
+                                <a layout:replace="~{parts/external-link::anchor('ケル国', 'http://jinro-kel.sakura.ne.jp/')}"></a>
+                            </td>
+                            <td>○</td>
+                            <td>○</td>
+                            <td>○</td>
+                            <td></td>
+                            <td></td>
+                            <td style="text-align: left;">
+                                長期も遊べるが短期向け<br>シンプルで、「人狼初心者だけど興味がある！という方が参加しやすい」国を目指している<br>
+                            </td>
+                        </tr>
+                        <!-- JINRO LITE -->
+                        <tr>
+                            <td style="text-align: left;">
+                                <a layout:replace="~{parts/external-link::anchor('JinroLite', 'https://www.jinro-lite.com/')}"></a>
+                            </td>
+                            <td>○</td>
+                            <td>○</td>
+                            <td>○</td>
+                            <td></td>
+                            <td></td>
+                            <td style="text-align: left;">
+                                UIがシンプルでわかりやすく、スマホでも見やすい<br>
+                            </td>
+                        </tr>
+                        <!-- 人狼オンラインX -->
+                        <tr>
+                            <td style="text-align: left;">
+                                <a layout:replace="~{parts/external-link::anchor('人狼オンラインX', 'http://www.werewolfonline.net/')}"></a>
+                            </td>
+                            <td>○</td>
+                            <td>○</td>
+                            <td>※</td>
+                            <td>○</td>
+                            <td>○</td>
+                            <td style="text-align: left;">
+                                Web版のみ有料<br>必ず夜時間があるが、昼時間を長くして長期のようなルールにすることは可能
+                            </td>
+                        </tr>
+                        <!-- るる鯖 -->
+                        <tr>
+                            <td style="text-align: left;">
+                                <a layout:replace="~{parts/external-link::anchor('人狼ゲーム るる鯖', 'https://ruru-jinro.net/')}"></a>
+                            </td>
+                            <td></td>
+                            <td>○</td>
+                            <td>○</td>
+                            <td></td>
+                            <td></td>
+                            <td style="text-align: left;">
+                                多機能で、歴史が長いにもかかわらず人口が多い<br>
+                            </td>
+                        </tr>
+                        <!-- えけけ鯖 -->
+                        <tr>
+                            <td style="text-align: left;">
+                                <a layout:replace="~{parts/external-link::anchor('えけけ鯖', 'https://zinrou.com/')}"></a>
+                            </td>
+                            <td></td>
+                            <td>○</td>
+                            <td>○</td>
+                            <td></td>
+                            <td></td>
+                            <td style="text-align: left;">
+                                野良村は廃止されているが、定番配役の「17A」村がよく建てられている<br>ログ読みを「リプレイ」として実際の時間の流れで再現することができる
+                            </td>
+                        </tr>
+                        <!-- 人狼Online -->
+                        <tr>
+                            <td style="text-align: left;">
+                                <a layout:replace="~{parts/external-link::anchor('人狼Online', 'https://zinro.net/m/')}"></a>
+                            </td>
+                            <td></td>
+                            <td>○</td>
+                            <td>○</td>
+                            <td></td>
+                            <td></td>
+                            <td style="text-align: left;">ユーザ登録が不要で、ワンナイト人狼もプレイ可能</td>
+                        </tr>
+                        <!-- わかめて -->
+                        <tr>
+                            <td style="text-align: left;">
+                                <a layout:replace="~{parts/external-link::anchor('「汝は人狼なりや？」続わかめてエディション', 'http://jinrou.dip.jp/~jinrou/')}"></a>
+                            </td>
+                            <td></td>
+                            <td>○</td>
+                            <td>○</td>
+                            <td></td>
+                            <td></td>
+                            <td style="text-align: left;">「わかめて」の多人数用後継サイトで、チャット人狼の元祖とも言える</td>
+                        </tr>
+                        <!-- 人狼ジャッジメント -->
+                        <tr>
+                            <td style="text-align: left;">
+                                <a layout:replace="~{parts/external-link::anchor('人狼 ジャッジメント', 'https://www.sorairo.jp/jrvs.html')}"></a>
+                            </td>
+                            <td></td>
+                            <td>○</td>
+                            <td></td>
+                            <td>○</td>
+                            <td>○</td>
+                            <td style="text-align: left;">
+                                役職が豊富<br>リアルタイム用語集など初心者向けの機能がある
+                            </td>
+                        </tr>
+                        <!-- 人狼Zオンライン -->
+                        <tr>
+                            <td style="text-align: left;">
+                                <a layout:replace="~{parts/external-link::anchor('人狼Zオンライン', 'http://jinrouz.com/support/index.html')}"></a>
+                            </td>
+                            <td></td>
+                            <td>○</td>
+                            <td></td>
+                            <td>○</td>
+                            <td>○</td>
+                            <td style="text-align: left;">
+                                役職が豊富<br>独自の文化が形成されている（らしい）
+                            </td>
+                        </tr>
+                        <!-- 人狼殺 -->
+                        <tr>
+                            <td style="text-align: left;">
+                                <a layout:replace="~{parts/external-link::anchor('人狼殺', 'https://werewolf.coolfactory.jp/')}"></a>
+                            </td>
+                            <td></td>
+                            <td>○</td>
+                            <td></td>
+                            <td>○</td>
+                            <td>○</td>
+                            <td style="text-align: left;">チャットでなく対面人狼のように声で対話する人狼を楽しめる</td>
+                        </tr>
+                        <!-- 汝人狼也 -->
+                        <tr>
+                            <td style="text-align: left;">
+                                <a layout:replace="~{parts/external-link::anchor('汝人狼也', 'https://itunes.apple.com/jp/app/%E6%B1%9D%E4%BA%BA%E7%8B%BC%E4%B9%9F/id505849205?mt=8')}"></a>
+                            </td>
+                            <td></td>
+                            <td>○</td>
+                            <td></td>
+                            <td>○</td>
+                            <td></td>
+                            <td style="text-align: left;">
+                                iPhone専用<br>
+                            </td>
+                        </tr>
+                        <!-- 人狼村 -->
+                        <tr>
+                            <td style="text-align: left;">
+                                <a layout:replace="~{parts/external-link::anchor('人狼村', 'https://itunes.apple.com/jp/app/%E4%BA%BA%E7%8B%BC%E6%9D%91/id1082193172?mt=8')}"></a>
+                            </td>
+                            <td></td>
+                            <td>○</td>
+                            <td></td>
+                            <td>○</td>
+                            <td></td>
+                            <td style="text-align: left;">
+                                iPhone専用<br>チャット感覚でプレイ可能
+                            </td>
+                        </tr>
+                        <!-- WOLF MANSION -->
+                        <tr>
+                            <td style="text-align: left;">
+                                <a layout:replace="~{parts/external-link::anchor('WOLF MANSION', 'https://wolfort.net/wolf-mansion/')}"></a>
+                            </td>
+                            <td>※</td>
+                            <td></td>
+                            <td>○</td>
+                            <td></td>
+                            <td></td>
+                            <td style="text-align: left;">
+                                特殊ルール「人狼館の推理村」ルールがプレイ可能<br>対話がないため時間のない人でも楽しめる<br>当サイト管理人が運営
+                            </td>
+                        </tr>
+                        <!-- ワードウルフオンライン -->
+                        <tr>
+                            <td style="text-align: left;">
+                                <a layout:replace="~{parts/external-link::anchor('ワードウルフオンライン', 'https://wordwolf-online.com')}"></a>
+                            </td>
+                            <td></td>
+                            <td>※</td>
+                            <td>○</td>
+                            <td></td>
+                            <td></td>
+                            <td style="text-align: left;">
+                                「ワードウルフ」がプレイ可能<br>当サイト管理人が運営
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-sm-12 col-xs-12">
+                <div class="well">
+                    <ul style="padding-inline-start: 10px;">
+                        <li>種別について<br> このサイトでは以下のように分けています。
+                            <ul>
+                                <li>長期: 1日の時間が12h~</li>
+                                <li>短期: 1日の時間が数分〜12h未満</li>
+                            </ul>
+                        </li>
+                        <li>掲載に問題がございましたら、お手数ですが<a
+                                layout:replace="~{parts/external-link::anchor('@ort_dev', 'https://twitter.com/ort_dev')}"></a>までご連絡ください。
+                        </li>
+                        <li>新規掲載依頼につきましても同連絡先までお願いします。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

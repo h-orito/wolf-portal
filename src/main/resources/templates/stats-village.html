@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/layout}">
+<head>
+    <meta charset="utf-8"/>
+    <title th:text="${country.countryName + ' ' + village.villageName + ' 村情報'}">村（確認用）</title>
+</head>
+
+<body>
+<div class="container">
+    <div layout:fragment="content">
+        <div id="wrapper">
+            <div class="col-sm-12 col-xs-12">
+                <h1 class="h3" th:text="${country.countryName + ' ' + village.villageName + ' 村情報'}">人狼BBS:G G2000</h1>
+
+                <div id="village" class="table-responsive small">
+                    <table class="table table-striped table-condensed table-bordered">
+                        <thead>
+                        <tr>
+                            <th>国</th>
+                            <th>村名</th>
+                            <th>開始日時</th>
+                            <th>終了日時</th>
+                            <th>勝利陣営名</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><a th:href="@{/stats/country/{countryId}/village-list(countryId=${country.countryId})}"
+                                   th:text="${country.countryName}"></a></td>
+                            <td>
+                                <th:block th:text="${village.villageName}"></th:block>
+                                (<a th:href="${village.villageUrl}" target="_blank">本国</a>)
+                            </td>
+                            <td><span layout:replace="~{parts/stats-datetime::date(${village.villageStartDatetime})}"></span></td>
+                            <td><span layout:replace="~{parts/stats-datetime::date(${village.villageEndDatetime})}"></span></td>
+                            <td th:text="${village.winCampName}">人狼陣営</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="village-player-list" class="table-responsive small">
+                    <table class="table table-striped table-condensed table-bordered">
+                        <thead>
+                        <tr>
+                            <th>ユーザID</th>
+                            <th>キャラクター名</th>
+                            <th>役職名</th>
+                            <th>生死</th>
+                            <th>勝敗</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="vp : ${village.villagePlayerStatsList}">
+                            <td><a
+                                    th:href="@{/stats/country/{countryId}/country-player/{countryPlayerId}(countryId=${village.countryId}, countryPlayerId=${vp.countryPlayer.countryPlayerId})}"
+                                    th:text="${vp.countryPlayer.userId}">ort</a> &nbsp;(<a
+                                    th:href="@{/stats/player/{playerId}(playerId=${vp.countryPlayer.playerId})}">全国戦績</a>)
+                            </td>
+                            <td th:text="${vp.characterName}">楽天家 ゲルト</td>
+                            <td th:text="${vp.skillName}">人狼</td>
+                            <td th:class="${vp.life == null ? '' : #strings.contains(vp.life, '突然') ? 'bg-danger' : ''}"
+                                th:text="${vp.life}">2d襲撃死
+                            </td>
+                            <td th:class="${vp.winlose == '勝利' ? 'text-success'
+												: vp.winlose == '敗北' ? 'text-danger' : ''}" th:text="${vp.winlose}">勝利
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-sm-12 col-xs-12 crearfix" style="margin-top: 15px;">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- wolf-portal -->
+                <ins class="adsbygoogle" style="display: block" data-ad-client="ca-pub-0917187897820609" data-ad-slot="3456314574"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+						(adsbygoogle = window.adsbygoogle || []).push({});
+
+                </script>
+            </div>
+            <div class="col-sm-12 col-xs-12 crearfix" style="margin-top: 15px;">
+                <h2 class="h4">同村者</h2>
+                <div id="rematch-list" class="table-responsive small">
+                    <table class="table table-striped table-condensed table-bordered">
+                        <th:block th:each="rematch: ${rematchList}">
+                            <thead>
+                            <tr>
+                                <th colspan="6"><a
+                                        th:href="@{/stats/country/{countryId}/country-player/{countryPlayerId}(countryId=${rematch.countryId}, countryPlayerId=${rematch.countryPlayerId})}"
+                                        th:text="${rematch.userId + '視点'}">ort視点</a></th>
+                            </tr>
+                            <tr th:if="${rematch.rematchDetailList.size() > 0}">
+                                <th>国</th>
+                                <th>村名</th>
+                                <th>ユーザID</th>
+                                <th>キャラクター名</th>
+                                <th>役職名</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:if="${rematch.rematchDetailList.size() > 0}" th:each="detail : ${rematch.rematchDetailList}">
+                                <td><a th:href="@{/stats/country/{countryId}/village-list(countryId=${detail.countryId})}"
+                                       th:text="${detail.countryName}">人狼BBS:G</a>
+                                </td>
+                                <td>
+                                    <a th:href="@{/stats/country/{countryId}/village/{villageId}(countryId=${detail.countryId}, villageId=${detail.villageId})}"
+                                       th:text="${detail.villageName}">G1782 ほげ村</a></td>
+                                <td><a
+                                        th:href="@{/stats/country/{countryId}/country-player/{countryPlayerId}(countryId=${detail.countryId}, countryPlayerId=${detail.countryPlayerId})}"
+                                        th:text="${detail.userId}">ort</a> &nbsp;(<a
+                                        th:href="@{/stats/player/{playerId}(playerId=${detail.playerId})}">全国戦績</a>)
+                                </td>
+                                <td th:text="${detail.characterName}">楽天家 ゲルト</td>
+                                <td th:text="${detail.skillName}">村人</td>
+                            </tr>
+                            <tr th:if="${rematch.rematchDetailList.size() == 0}">
+                                <td colspan="6">再戦相手なし</td>
+                            </tr>
+                            </tbody>
+                        </th:block>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/layout}">
+<head>
+    <meta charset="utf-8"/>
+    <title>各国開催状況</title>
+    <script src="../static/app/js/recruitment.js" th:src="@{/app/js/recruitment.js}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
+    <style>
+.nowrap {
+	white-space: nowrap;
+}
+
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div layout:fragment="content">
+        <div id="wrapper">
+            <div class="col-sm-12 col-xs-12">
+                <h1 class="h4">各国開催状況</h1>
+                <p>
+                    現在、募集中の村が <strong class="lead" th:text="${content.recruitingVillageNum}"></strong> 村、<br> 進行中の村が <strong class="lead"
+                                                                                                                             th:text="${content.progressVillageNum}"></strong>
+                    村あり、<br> 募集中と進行中合わせて <strong class="lead"
+                                                 th:text="${content.participateRecruitingVillageNum + content.participateProgressVillageNum}"></strong>
+                    人が参加しています。
+                </p>
+                <p>
+                    <a href="javascript:void(0);" data-hide-no-recruit>現在開催している国のみ表示する</a><a href="javascript:void(0);" class="hidden"
+                                                                                             data-disp-no-recruit>現在開催していない国も表示する</a>
+                </p>
+            </div>
+            <div class="col-sm-12 col-xs-12">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#recruit" data-toggle="tab">募集中</a></li>
+                    <li><a href="#progress" data-toggle="tab">進行中</a></li>
+                </ul>
+
+                <div class="tab-content" style="padding-top: 20px;">
+                    <div class="tab-pane active row" id="recruit">
+                        <div layout:replace="~{recruitment::tab-content('recruit')}"></div>
+                    </div>
+                    <div class="tab-pane row" id="progress">
+                        <div layout:replace="~{recruitment::tab-content('progress')}"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-xs-12">
+                <div class="well">
+                    <p>
+                        <span class="village-icon village-icon-warn">鍵</span>: 参加時にパスワードが必要な村
+                    </p>
+                    <p>
+                        <span class="village-icon village-icon-danger">赤アイコン</span>: 閲覧に注意が必要な村
+                    </p>
+                    <p>
+                        <span class="village-icon village-icon-info">青アイコン</span>: その他属性
+                    </p>
+                </div>
+                <hr/>
+                <div class="well">
+                    <ul style="padding-inline-start: 10px;">
+                        <li>掲載に問題がございましたら、お手数ですが<a href="https://twitter.com/ort_dev" target="_blank">@ort_dev</a>までご連絡ください。
+                        </li>
+                        <li>新規掲載依頼につきましても同連絡先までお願いします。</li>
+                        <li>募集状況の取得は30分に一度行なっています。</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-12 col-xs-12">
+                <canvas id="canvas"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<th:block layout:fragment="tab-content(status)">
+    <div class="col-sm-12 col-xs-12">
+        <div class="table-responsive small clearfix" style="margin-bottom: 20px;">
+            <table class="table table-bordered table-condensed">
+                <th:block th:with="villageList = ${status == 'recruit' ? country.recruitVillageList : country.progressVillageList}"
+                          th:each="country: ${content.countryList}">
+                    <thead th:data-no-disp="${country.isFailure || villageList.size() == 0}">
+                    <tr>
+                        <th><a th:href="${country.countryUrl}" target="_blank" class="" th:text="${country.countryName}">国名</a></th>
+                        <th>人数（見学人数）</th>
+                        <th>属性</th>
+                        <th th:text="${country.countryName == 'JinroLite' ? '開始予定' : '更新時間'}"></th>
+                        <th>更新間隔</th>
+                        <th>状態</th>
+                        <th>キャラセット</th>
+                        <th>役職配分</th>
+                        <th>発言制限その他</th>
+                        <th>情報取得日時</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:if="${country.isFailure}" data-no-disp="true">
+                        <td colspan="9">取得に失敗しました。</td>
+                        <td th:text="${country.lastupdate}"></td>
+                    </tr>
+                    <tr th:if="${!country.isFailure && villageList.size() == 0}" data-no-disp="true">
+                        <td colspan="9" th:if="${status == 'recruit'}">現在募集中の村はありません。</td>
+                        <td colspan="9" th:if="${status == 'progress'}">現在進行中の村はありません。</td>
+                        <td th:text="${country.lastupdate}"></td>
+                    </tr>
+                    <tr th:unless="${country.isFailure || villageList.size() == 0}" th:each="village : ${villageList}" data-no-disp="false">
+                        <td>
+                            <th:block th:if="${village.itemMap['village_name']}">
+                                <a th:if="${#strings.length(village.itemMap['village_name']) < 15}"
+                                   th:href="${village.itemMap['village_url']}" target="_blank"
+                                   th:text="${village.itemMap['village_name']}"></a>
+                                <span th:if="${#strings.length(village.itemMap['village_name']) >= 15}"> <a
+                                        th:href="${village.itemMap['village_url']}"
+                                        target="_blank" th:text="${#strings.substring(village.itemMap['village_name'], 0, 15) + '...'}"
+                                        th:title="${village.itemMap['village_name']}"></a>
+									</span>
+                            </th:block>
+                            <th:block th:unless="${village.itemMap['village_name']}">
+                                <a th:href="${village.itemMap['village_url']}" target="_blank">
+                                    村名取得失敗
+                                </a>
+                            </th:block>
+                            <th:block th:if="${village.itemMap['village_info_url'] != null}">
+                                (<a th:href="${village.itemMap['village_info_url']}" target="_blank"
+                                    th:text="${country.countryName == '人狼BBS:G' ? 'ぎじろぐ' : '情報'}"></a>)
+                            </th:block>
+                        </td>
+                        <td class="nowrap"><span th:text="${village.itemMap['participate_status']}"></span><span
+                                th:if="${village.itemMap['spectate_status']}"
+                                th:text="${'（' + village.itemMap['spectate_status'] + '）'}"></span></td>
+                        <td>
+                            <th:block th:if="${village.itemMap['icon_images'] != null}">
+									<span th:each="msg: ${village.itemMap['icon_images'].split(',')}" th:text="${msg}"
+                                          th:class="'village-icon ' + ${msg == '鍵' ? 'village-icon-warn'
+								: msg == 'R18' || msg == 'R15' || msg == '犯罪' || msg == '注意' || msg == '閲注' || msg == 'グロ' ? 'village-icon-danger'
+								: msg == '性' || msg == '性愛' || msg == '性暴' || msg == '暴' || msg == '暴力' || msg == 'エログロ' ? 'village-icon-danger'
+								: msg == 'R指定' || msg == 'エロ' ? 'village-icon-danger'
+								: 'village-icon-info'}"></span>
+                            </th:block>
+                        </td>
+                        <td class="nowrap" th:text="${village.itemMap['daychange_datetime']}"></td>
+                        <td class="nowrap" th:text="${village.itemMap['daychange_interval']}"></td>
+                        <td class="nowrap" th:text="${village.itemMap['village_status']}"></td>
+                        <td th:text="${village.itemMap['charaset']}"></td>
+                        <td class="nowrap" th:text="${village.itemMap['organize']}"></td>
+                        <td><span
+                                th:if="${village.itemMap['say_restrict'] != null && #strings.length(village.itemMap['say_restrict']) < 20}"
+                                th:text="${village.itemMap['say_restrict']}"></span> <span
+                                th:if="${village.itemMap['say_restrict'] != null && #strings.length(village.itemMap['say_restrict']) >= 20}"> <span
+                                th:text="${#strings.substring(village.itemMap['say_restrict'], 0, 20) + '...'}"
+                                th:title="${village.itemMap['say_restrict']}"></span> <a
+                                href="javascript:void(0);" data-show-description="true">全て表示</a>
+							</span></td>
+                        <td class="nowrap" th:text="${country.lastupdate}"></td>
+                    </tr>
+                    </tbody>
+                </th:block>
+            </table>
+        </div>
+    </div>
+</th:block>
+</html>

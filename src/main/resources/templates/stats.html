@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/layout}">
+<head>
+    <meta charset="utf-8"/>
+    <title>各国戦績</title>
+    <script src="../static/app/js/stats.js" th:src="@{/app/js/stats.js}"></script>
+    <style>
+#sitelist th, #sitelist td {
+	vertical-align: middle;
+}
+
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div layout:fragment="content">
+        <div id="wrapper">
+            <div class="col-sm-12 col-xs-12">
+                <h1 class="h3">各国戦績</h1>
+                <p>
+                    一部長期人狼サイトのユーザ情報、村情報、再戦情報を掲載しています。<br>サイトを跨いだ再戦情報を確認する際にお役立てください。<br>なお、各国横断でのユーザ戦績については<a
+                        href="http://waoon.net/record/"
+                        target="_blank">人狼戦績まとめ</a>様（別サイト）のほうが対応国も多く詳しいと思われますので、そちらもご参照ください。
+                </p>
+                <p layout:replace="~{parts/stats-country::country}"></p>
+            </div>
+            <div class="col-sm-12 col-xs-12">
+                <div id="sitelist" class="table-responsive small">
+                    <table class="table table-striped table-condensed table-bordered">
+                        <thead>
+                        <tr>
+                            <th>サイト名</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <a layout:replace="~{parts/external-link::anchor('人狼BBS:G', 'http://www.wolfg.x0.com/')}"></a>
+                            </td>
+                            <td>
+                                <a th:href="@{/stats/country/2/village-list}" class="btn btn-sm btn-primary">村一覧</a> <a
+                                    th:href="@{/stats/country/2/player-list}"
+                                    class="btn btn-sm btn-primary">ユーザ一覧</a><br>
+                                <form class="form-inline" style="margin-top: 10px;" data-village-no-form="2">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">村番号</span>
+                                            <input type="number" name="villageNo" class="form-control" placeholder="100" min="1" step="1">
+                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary" data-village>GO</a>
+                                        </div>
+                                    </div>
+                                </form>
+                                <form class="form-inline" style="margin-top: 10px;" data-user-id-form="2">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">ユーザID</span>
+                                            <input type="text" name="userId" class="form-control" placeholder="master">
+                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary" data-user>GO</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a layout:replace="~{parts/external-link::anchor('人狼物語 月狼国 side:M', 'http://managarmr.sakura.ne.jp/sow.cgi')}"></a>
+                            </td>
+                            <td>
+                                <a th:href="@{/stats/country/4/village-list}" class="btn btn-sm btn-primary">村一覧</a> <a
+                                    th:href="@{/stats/country/4/player-list}"
+                                    class="btn btn-sm btn-primary">ユーザ一覧</a><br>
+                                <form class="form-inline" style="margin-top: 10px;" data-village-no-form="4">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">村番号</span>
+                                            <input type="number" name="villageNo" class="form-control" placeholder="100" min="1" step="1">
+                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary" data-village>GO</a>
+                                        </div>
+                                    </div>
+                                </form>
+                                <form class="form-inline" style="margin-top: 10px;" data-user-id-form="4">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">ユーザID</span>
+                                            <input type="text" name="userId" class="form-control" placeholder="master">
+                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary" data-user>GO</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <a layout:replace="~{parts/external-link::anchor('人狼物語 月狼国 side:H', 'http://marchocias.xsrv.jp/sow.cgi')}"></a>
+                            </td>
+                            <td>
+                                <a th:href="@{/stats/country/5/village-list}" class="btn btn-sm btn-primary">村一覧</a> <a
+                                    th:href="@{/stats/country/5/player-list}"
+                                    class="btn btn-sm btn-primary">ユーザ一覧</a><br>
+                                <form class="form-inline" style="margin-top: 10px;" data-village-no-form="5">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">村番号</span>
+                                            <input type="number" name="villageNo" class="form-control" placeholder="100" min="1" step="1">
+                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary" data-village>GO</a>
+                                        </div>
+                                    </div>
+                                </form>
+                                <form class="form-inline" style="margin-top: 10px;" data-user-id-form="5">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">ユーザID</span>
+                                            <input type="text" name="userId" class="form-control" placeholder="master">
+                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary" data-user>GO</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <a layout:replace="~{parts/external-link::anchor('人狼物語 月狼国 side:E', 'http://hrodvitnir.sakura.ne.jp/sow.cgi')}"></a>
+                            </td>
+                            <td>
+                                <a th:href="@{/stats/country/6/village-list}" class="btn btn-sm btn-primary">村一覧</a> <a
+                                    th:href="@{/stats/country/6/player-list}"
+                                    class="btn btn-sm btn-primary">ユーザ一覧</a><br>
+                                <form class="form-inline" style="margin-top: 10px;" data-village-no-form="6">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">村番号</span>
+                                            <input type="number" name="villageNo" class="form-control" placeholder="100" min="1" step="1">
+                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary" data-village>GO</a>
+                                        </div>
+                                    </div>
+                                </form>
+                                <form class="form-inline" style="margin-top: 10px;" data-user-id-form="6">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">ユーザID</span>
+                                            <input type="text" name="userId" class="form-control" placeholder="master">
+                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary" data-user>GO</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a layout:replace="~{parts/external-link::anchor('人狼物語 三日月国', 'http://www.moonpupa.jp/wolf/sow/sow.cgi')}"></a>
+                            </td>
+                            <td>
+                                <a th:href="@{/stats/country/7/village-list}" class="btn btn-sm btn-primary">村一覧</a> <a
+                                    th:href="@{/stats/country/7/player-list}"
+                                    class="btn btn-sm btn-primary">ユーザ一覧</a><br>
+                                <form class="form-inline" style="margin-top: 10px;" data-village-no-form="7">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">村番号</span>
+                                            <input type="number" name="villageNo" class="form-control" placeholder="100" min="1" step="1">
+                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary" data-village>GO</a>
+                                        </div>
+                                    </div>
+                                </form>
+                                <form class="form-inline" style="margin-top: 10px;" data-user-id-form="7">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">ユーザID</span>
+                                            <input type="text" name="userId" class="form-control" placeholder="master">
+                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary" data-user>GO</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-sm-12 col-xs-12">
+                <div class="well">
+                    <ul style="padding-inline-start: 10px;">
+                        <li>一部正確な情報が取得できていない可能性があります。お気づきの点がありましたらお知らせください。</li>
+                        <li>村の開始終了日時は1日目第1発言とエピローグ第1発言を基にしているため多少ズレます。</li>
+                        <li>情報の取得は1日に一度、夜中に行なっています。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

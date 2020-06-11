@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/layout}">
+<head>
+<meta charset="utf-8" />
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>プレイヤー（確認用）</title>
+</head>
+
+<body>
+	<nav layout:fragment="pagenation(paging)" class="pull-right">
+		<ul class="pagination pagination-sm" th:if="${paging.allPageCount > 1}">
+			<li th:class="${paging.existPrePage ? '' : 'disabled'}"><a href="javascript:void(0);" data-pagenum="1">&lt;&lt;</a></li>
+			<li th:class="${paging.existPrePage ? '' : 'disabled'}"><a href="javascript:void(0);" th:data-prev-page="${paging.currentPageNum}">&lt;</a></li>
+			<li th:each="pageNum : ${paging.pageNumList}" th:class="${pageNum == paging.currentPageNum ? 'active' : ''}"><a href="javascript:void(0);"
+				th:data-pagenum="${pageNum}" th:text="${pageNum}"></a></li>
+			<li th:class="${paging.existNextPage ? '' : 'disabled'}"><a href="javascript:void(0);" th:data-next-page="${paging.currentPageNum}">&gt;</a></li>
+			<li th:class="${paging.existNextPage ? '' : 'disabled'}"><a href="javascript:void(0);" th:data-pagenum="${paging.allPageCount}">&gt;&gt;</a></li>
+		</ul>
+	</nav>
+</body>
+</html>

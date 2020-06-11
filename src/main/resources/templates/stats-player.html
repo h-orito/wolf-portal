@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/layout}">
+<head>
+    <meta charset="utf-8"/>
+    <title>各国ユーザ情報</title>
+    <script src="../static/app/js/stats-player.js" th:src="@{/app/js/stats-player.js}"></script>
+</head>
+
+<body>
+<div class="container">
+    <div layout:fragment="content">
+        <div id="wrapper">
+            <div class="col-sm-12 col-xs-12">
+                <h1 class="h3">各国のユーザID</h1>
+                <p layout:replace="~{parts/stats-country::country}"></p>
+                <p>
+                    各国横断での戦績については<a href="http://waoon.net/record/" target="_blank">人狼戦績まとめ</a>様（別サイト）のほうが対応国も多く詳しいと思われますので、そちらもご参照ください。<br>
+                    「ユーザIDは同じだけど違う人です」「ユーザIDは違うけど同じ人です」等ありましたらお知らせいただけるとありがたいです。
+                </p>
+                <div id="user-list" class="table-responsive small">
+                    <table class="table table-striped table-condensed table-bordered">
+                        <thead>
+                        <tr>
+                            <th>国</th>
+                            <th>ユーザID</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="countryPlayer : ${player.countryPlayerList}">
+                            <td><a th:href="@{/stats/country/{countryId}/player-list(countryId=${countryPlayer.countryId})}"
+                                   th:text="${countryPlayer.countryName}">人狼BBS:G</a>
+                            </td>
+                            <td><a
+                                    th:href="@{/stats/country/{countryId}/country-player/{countryPlayerId}(countryId=${countryPlayer.countryId}, countryPlayerId=${countryPlayer.countryPlayerId})}"
+                                    th:text="${countryPlayer.userId}">ort</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-sm-12 col-xs-12">
+                <h2 class="h3">参加した村</h2>
+            </div>
+            <div class="col-sm-12 col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">検索</div>
+                    <div class="panel-body">
+                        <form id="search-form" th:object="${searchForm}">
+                            <div class="form-group">
+                                <label>村名 (部分一致)</label> <input type="text" th:field="*{villageName}" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-primary pull-right">検索</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-xs-12">
+                <nav layout:replace="~{parts/pagenation::pagenation(${paging})}"></nav>
+            </div>
+            <div class="col-sm-12 col-xs-12">
+                <div id="village-list" class="table-responsive small">
+                    <table class="table table-striped table-condensed table-bordered">
+                        <thead>
+                        <tr>
+                            <th>国</th>
+                            <th>村名</th>
+                            <th>ユーザID</th>
+                            <th>キャラクター名</th>
+                            <th>役職</th>
+                            <th>生死</th>
+                            <th>勝敗</th>
+                            <th>開始日時</th>
+                            <th>終了日時</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="vps : ${vpsList}">
+                            <td><a th:href="@{/stats/country/{countryId}/village-list(countryId=${vps.village.countryId})}"
+                                   th:text="${vps.village.countryName}">人狼BBS:G</a>
+                            </td>
+                            <td><a
+                                    th:href="@{/stats/country/{countryId}/village/{villageId}(countryId=${vps.village.countryId}, villageId=${vps.village.villageId})}"
+                                    th:text="${vps.village.villageName}">G1234 ほげ村</a> &nbsp;(<a th:href="${vps.village.villageUrl}"
+                                                                                                 target="_blank">本国</a>)
+                            </td>
+                            <td><a
+                                    th:href="@{/stats/country/{countryId}/country-player/{countryPlayerId}(countryId=${vps.countryPlayer.countryId}, countryPlayerId=${vps.countryPlayer.countryPlayerId})}"
+                                    th:text="${vps.countryPlayer.userId}">ort</a></td>
+                            <td th:text="${vps.characterName}">シスター フリーデル</td>
+                            <td th:text="${vps.skillName}">村人</td>
+                            <td th:class="${vps.life == null ? '' : #strings.contains(vps.life, '突然') ? 'bg-danger' : ''}"
+                                th:text="${vps.life}">2d襲撃死
+                            </td>
+                            <td th:class="${vps.winlose == '勝利' ? 'text-success'
+												: vps.winlose == '敗北' ? 'text-danger' : ''}" th:text="${vps.winlose}">勝利
+                            </td>
+                            <td><span layout:replace="~{parts/stats-datetime::date(${vps.village.villageStartDatetime})}"></span></td>
+                            <td><span layout:replace="~{parts/stats-datetime::date(${vps.village.villageEndDatetime})}"></span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-sm-12 col-xs-12">
+                <nav layout:replace="~{parts/pagenation::pagenation(${paging})}"></nav>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

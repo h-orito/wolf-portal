@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/layout}">
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+</head>
+
+<body>
+<div class="container">
+    <div layout:fragment="content">
+        <div id="wrapper">
+            <div class="col-sm-12 col-xs-12">
+                <h1 class="h4">オンライン人狼関連リンク</h1>
+                <p>まとめサイトやブログ等、オンライン人狼関連のサイトリンクを表示します。</p>
+            </div>
+            <div class="col-sm-12 col-xs-12" style="margin-top: 20px;">
+                <hr>
+                <h2 class="h4">まとめサイト系</h2>
+                <span style="font-size: 16px;"><a
+                        layout:replace="~{parts/external-link::anchor('人狼BBS まとめサイト', 'https://wolfbbs.jp/FrontPage.html')}"></a></span>
+                <p style="margin-bottom: 20px;">
+                    <a layout:replace="~{parts/external-link::anchor('人狼BBS', 'http://www.wolfg.x0.com/')}"></a>の非公式まとめサイト（wiki形式）です。<br>
+                    参加するにあたっての注意事項や村ごとの見どころ、おすすめログ、ユーザの個人ページ、各種ツール、読み物などがあります。<br> 人狼BBSに限らず、オンライン人狼に参加するなら一度は目を通しておきたいサイトです。<br>
+                </p>
+                <span style="font-size: 16px;"><a
+                        layout:replace="~{parts/external-link::anchor('人狼物語専用wiki', 'http://melon-cirrus.sakura.ne.jp/wiki/')}"></a></span>
+                <p style="margin-bottom: 20px;">「人狼物語 ●●国」などの、人狼物語スクリプトを利用しているサイトのための総合wikiです。</p>
+                <hr>
+                <h2 class="h4">戦績・ランキング</h2>
+                <span style="font-size: 16px;"><a
+                        layout:replace="~{parts/external-link::anchor('人狼戦績まとめ', 'http://waoon.net/record/')}"></a></span>
+                <p style="margin-bottom: 20px;">
+                    長期Web人狼の勝敗結果をID別に閲覧できるサイトです。<br>当サイトよりも対応国が多いので、ID戦績を確認したい場合はこちらのサイトで検索することをおすすめします。
+                </p>
+                <span style="font-size: 16px;"><a
+                        layout:replace="~{parts/external-link::anchor('WOLFBBS STATS', 'https://wolfort.net/wolfbbs-stats/')}"></a></span>
+                <p style="margin-bottom: 20px;">
+                    <a layout:replace="~{parts/external-link::anchor('人狼BBS', 'http://www.wolfg.x0.com/')}"></a>の非公式ファンサイトです。<br> 人狼BBS
+                    C,F,G国の各種ランキング、傾向情報、村情報、村検索などの統計情報や、高機能ログビューワなどがあります。<br> 当サイト開発者の別サイトです。人狼BBSに参加する際にはぜひ使ってみてください。
+                </p>
+                <hr>
+                <h2 class="h4" style="margin-top: 20px;">SNS系</h2>
+                <span style="font-size: 16px;"><a layout:replace="~{parts/external-link::anchor('人狼SNS魁', 'http://www.jinrosns.net/')}"></a></span>
+                <p style="margin-bottom: 20px;">mixiライクな人狼プレイヤーによる人狼プレイヤーのためのSNSです。招待制となっています。</p>
+                <hr>
+                <h2 class="h4">読み物系</h2>
+                <span style="font-size: 16px;"><a
+                        layout:replace="~{parts/external-link::anchor('人狼の勉強机', 'http://den.waoon.net/')}"></a></span>
+                <p style="margin-bottom: 20px;">
+                    人狼BBS:Fの勝率トップである<a
+                        layout:replace="~{parts/external-link::anchor('luxx', 'https://wolfort.net/wolfbbs-stats/user/luxx?country=F')}"></a>さんによるブログです。<br>
+                    戦術論、勉強法、初めて人狼をやる人向けの記事など、どの層にも勉強になる記事が多数あります。
+                </p>
+                <span style="font-size: 16px;"><a
+                        layout:replace="~{parts/external-link::anchor('月狼国 管理人室・ロビー', 'http://managarmr.sakura.ne.jp/sow.cgi?cmd=lobby')}"></a></span>
+                <p style="margin-bottom: 20px;">
+                    <a layout:replace="~{parts/external-link::anchor('人狼物語 月狼国', 'http://managarmr.sakura.ne.jp/sow.cgi')}"></a>管理人さんによるガイドです。<br>
+                    初級者〜上級者それぞれに向けた記事があり、社会心理学にまで踏み込んだ読み応えのある内容になっています。
+                </p>
+                <span style="font-size: 16px;"><a
+                        layout:replace="~{parts/external-link::anchor('人狼: 不倒城', 'http://mubou.seesaa.net/category/621548-1.html')}"></a></span>
+                <p style="margin-bottom: 20px;">
+                    何を話せば良いかわからない初級者向けの記事や陣形考察などの中級者向け記事があります。文章が読みやすいです。
+                </p>
+                <hr>
+                <h2 class="h4">宣伝（開発者のサイト）</h2>
+                <span style="font-size: 16px;"><a
+                        layout:replace="~{parts/external-link::anchor('ワードウルフオンライン', 'https://wordwolf-online.com/')}"></a></span>
+                <p style="margin-bottom: 20px;">ワードウルフが無料・専用アプリ不要で気軽に遊べるサービスです。4人から、1ゲーム5分程度で手軽に遊ぶことができます。</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

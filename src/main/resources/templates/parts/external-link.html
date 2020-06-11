@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/layout}">
+<head>
+<meta charset="utf-8" />
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>プレイヤー（確認用）</title>
+</head>
+
+<body>
+	<a layout:fragment="anchor(text, url)" th:href="${url}" th:text="${text}" target="_blank" rel="noopener noreferrer"></a>
+</body>
+</html>
