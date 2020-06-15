@@ -6,9 +6,9 @@
     <script src="../static/app/js/recruitment.js" th:src="@{/app/js/recruitment.js}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
     <style>
-.nowrap {
-	white-space: nowrap;
-}
+    .nowrap {
+        white-space: nowrap;
+    }
 
     </style>
 </head>
@@ -81,7 +81,7 @@
             <table class="table table-bordered table-condensed">
                 <th:block th:with="villageList = ${status == 'recruit' ? country.recruitVillageList : country.progressVillageList}"
                           th:each="country: ${content.countryList}">
-                    <thead th:data-no-disp="${country.isFailure || villageList.size() == 0}">
+                    <thead th:data-no-disp="${country.failure || villageList.size() == 0}">
                     <tr>
                         <th><a th:href="${country.countryUrl}" target="_blank" class="" th:text="${country.countryName}">国名</a></th>
                         <th>人数（見学人数）</th>
@@ -96,16 +96,16 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr th:if="${country.isFailure}" data-no-disp="true">
+                    <tr th:if="${country.failure}" data-no-disp="true">
                         <td colspan="9">取得に失敗しました。</td>
                         <td th:text="${country.lastupdate}"></td>
                     </tr>
-                    <tr th:if="${!country.isFailure && villageList.size() == 0}" data-no-disp="true">
+                    <tr th:if="${!country.failure && villageList.size() == 0}" data-no-disp="true">
                         <td colspan="9" th:if="${status == 'recruit'}">現在募集中の村はありません。</td>
                         <td colspan="9" th:if="${status == 'progress'}">現在進行中の村はありません。</td>
                         <td th:text="${country.lastupdate}"></td>
                     </tr>
-                    <tr th:unless="${country.isFailure || villageList.size() == 0}" th:each="village : ${villageList}" data-no-disp="false">
+                    <tr th:unless="${country.failure || villageList.size() == 0}" th:each="village : ${villageList}" data-no-disp="false">
                         <td>
                             <th:block th:if="${village.itemMap['village_name']}">
                                 <a th:if="${#strings.length(village.itemMap['village_name']) < 15}"

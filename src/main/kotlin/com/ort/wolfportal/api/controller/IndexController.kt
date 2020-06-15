@@ -15,7 +15,14 @@ class IndexController {
     }
 
     @GetMapping("/")
-    fun index(): String {
-        return "index"
-    }
+    fun index(): String = "index"
+
+    @GetMapping("/beginner")
+    fun beginner(): String = "beginner"
+
+    @GetMapping("/site-list")
+    fun siteList(): String = "site-list"
+
+    @GetMapping("/link")
+    fun link(): String = "link"
 }

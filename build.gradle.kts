@@ -25,6 +25,8 @@ dependencies {
     implementation("org.thymeleaf:thymeleaf:3.0.9.RELEASE")
     implementation("org.thymeleaf:thymeleaf-spring4:3.0.9.RELEASE")
     implementation("nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:2.3.0")
+    // jsoup
+    implementation("org.jsoup:jsoup:1.10.3")
     // dbflute
     implementation("org.springframework.boot:spring-boot-starter-data-jpa") {
         exclude("com.zaxxer:HikariCP")
