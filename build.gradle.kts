@@ -12,6 +12,15 @@ group = "com.ort"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.2.0.RELEASE")
+        classpath("com.google.cloud.tools:appengine-gradle-plugin:2.2.0")
+    }
+}
 repositories {
     mavenCentral()
 }
