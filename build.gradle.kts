@@ -21,6 +21,14 @@ buildscript {
         classpath("com.google.cloud.tools:appengine-gradle-plugin:2.2.0")
     }
 }
+
+sourceSets {
+    getByName("main").java.srcDirs("src/main/kotlin")
+    getByName("test").java.srcDirs("src/test")
+    getByName("main").resources.srcDirs("src/main/resources")
+    getByName("test").resources.srcDirs("src/test/resources")
+}
+
 repositories {
     mavenCentral()
 }
