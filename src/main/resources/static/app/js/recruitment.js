@@ -22,7 +22,7 @@ $(function() {
 	// 初期表示時は開催中の国のみにする
 	$('[data-hide-no-recruit]').trigger('click');
 
-	$.ajax(contextPath + '/recruitment-graph/').then(function(response) {
+	$.ajax(contextPath + 'recruitment-graph/').then(function(response) {
 		const lineChartData = {
 			labels : response.datetimeList,
 			datasets : [ {

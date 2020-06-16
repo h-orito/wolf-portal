@@ -23,7 +23,7 @@ object BrowserUtil {
      * @return resposne
      */
     fun createConnectionAndConnectWithSleep(url: String): Connection.Response {
-        sleep(1000)
+        sleep(500)
         return this.createConnectionAndConnect(url)
     }
 
