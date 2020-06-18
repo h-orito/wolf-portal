@@ -20,6 +20,7 @@ import com.ort.wolfportal.logic.stats.RematchLogic
 import com.ort.wolfportal.logic.stats.UpdateGetsurouSideEStatsLogic
 import com.ort.wolfportal.logic.stats.UpdateGetsurouSideHStatsLogic
 import com.ort.wolfportal.logic.stats.UpdateGetsurouSideMStatsLogic
+import com.ort.wolfportal.logic.stats.UpdateHowlingWolfStatsLogic
 import com.ort.wolfportal.logic.stats.UpdateMikazukiStatsLogic
 import com.ort.wolfportal.logic.stats.UpdateWolfbbsGStatsLogic
 import org.dbflute.cbean.result.ListResultBean
@@ -48,6 +49,7 @@ class StatsController(
     private val updateGetsurouSideHStatsLogic: UpdateGetsurouSideHStatsLogic,
     private val updateGetsurouSideEStatsLogic: UpdateGetsurouSideEStatsLogic,
     private val updateMikazukiStatsLogic: UpdateMikazukiStatsLogic,
+    private val updateHowlingWolfStatsLogic: UpdateHowlingWolfStatsLogic,
     private val rematchLogic: RematchLogic
 ) {
 
@@ -276,6 +278,7 @@ class StatsController(
             5 -> updateGetsurouSideHStatsLogic
             6 -> updateGetsurouSideEStatsLogic
             7 -> updateMikazukiStatsLogic
+            23 -> updateHowlingWolfStatsLogic
             else -> throw IllegalStateException("invalid countryId")
         }
     }
