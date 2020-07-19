@@ -22,6 +22,7 @@ import com.ort.wolfportal.logic.stats.UpdateGetsurouSideHStatsLogic
 import com.ort.wolfportal.logic.stats.UpdateGetsurouSideMStatsLogic
 import com.ort.wolfportal.logic.stats.UpdateHowlingWolfStatsLogic
 import com.ort.wolfportal.logic.stats.UpdateMikazukiStatsLogic
+import com.ort.wolfportal.logic.stats.UpdateWolfMansionStatsLogic
 import com.ort.wolfportal.logic.stats.UpdateWolfbbsGStatsLogic
 import org.dbflute.cbean.result.ListResultBean
 import org.dbflute.cbean.result.PagingResultBean
@@ -50,6 +51,7 @@ class StatsController(
     private val updateGetsurouSideEStatsLogic: UpdateGetsurouSideEStatsLogic,
     private val updateMikazukiStatsLogic: UpdateMikazukiStatsLogic,
     private val updateHowlingWolfStatsLogic: UpdateHowlingWolfStatsLogic,
+    private val updateWolfMansionStatsLogic: UpdateWolfMansionStatsLogic,
     private val rematchLogic: RematchLogic
 ) {
 
@@ -273,6 +275,7 @@ class StatsController(
     //                                                                        ============
     private fun detectLogic(countryId: Int): AbstractUpdateStatsLogic {
         return when (countryId) {
+            1 -> updateWolfMansionStatsLogic
             2 -> updateWolfbbsGStatsLogic
             4 -> updateGetsurouSideMStatsLogic
             5 -> updateGetsurouSideHStatsLogic

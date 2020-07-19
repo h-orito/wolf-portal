@@ -10,6 +10,8 @@
 }
 
 
+
+
     </style>
 </head>
 
@@ -44,7 +46,7 @@
                                 <a th:href="@{/stats/country/23/village-list}" class="btn btn-sm btn-primary">村一覧</a> <a
                                     th:href="@{/stats/country/23/player-list}"
                                     class="btn btn-sm btn-primary">ユーザ一覧</a><br>
-                                <form class="form-inline" style="margin-top: 10px;" data-village-no-form="2">
+                                <form class="form-inline" style="margin-top: 10px;" data-village-no-form="23">
                                     <div class="form-group">
                                         <div class="input-group">
                                             <span class="input-group-addon">村番号</span>
@@ -53,7 +55,35 @@
                                         </div>
                                     </div>
                                 </form>
-                                <form class="form-inline" style="margin-top: 10px;" data-user-id-form="2">
+                                <form class="form-inline" style="margin-top: 10px;" data-user-id-form="23">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">ユーザID</span>
+                                            <input type="text" name="userId" class="form-control" placeholder="master">
+                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary" data-user>GO</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a layout:replace="~{parts/external-link::anchor('WOLF MANSION', 'https://wolfort.net/wolf-mansion/')}"></a>
+                            </td>
+                            <td>
+                                <a th:href="@{/stats/country/1/village-list}" class="btn btn-sm btn-primary">村一覧</a> <a
+                                    th:href="@{/stats/country/1/player-list}"
+                                    class="btn btn-sm btn-primary">ユーザ一覧</a><br>
+                                <form class="form-inline" style="margin-top: 10px;" data-village-no-form="1">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">村番号</span>
+                                            <input type="number" name="villageNo" class="form-control" placeholder="100" min="1" step="1">
+                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary" data-village>GO</a>
+                                        </div>
+                                    </div>
+                                </form>
+                                <form class="form-inline" style="margin-top: 10px;" data-user-id-form="1">
                                     <div class="form-group">
                                         <div class="input-group">
                                             <span class="input-group-addon">ユーザID</span>
