@@ -5,14 +5,15 @@ import com.fasterxml.jackson.annotation.JsonProperty
 data class HowlingWolfVillageRecord(
     val id: Int,
     val name: String,
+    val status: String,
     @JsonProperty("start_datetime")
-    val startDatetime: String,
+    val startDatetime: String?,
     @JsonProperty("epilogue_datetime")
-    val epilogueDatetime: String,
+    val epilogueDatetime: String?,
     val organization: String,
     val url: String,
     @JsonProperty("win_camp_name")
-    val winCampName: String,
+    val winCampName: String?,
     @JsonProperty("participant_list")
     val participantList: List<HowlingWolfVillageParticipantRecord>
 )

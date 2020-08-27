@@ -19,8 +19,11 @@ class UpdateWolfMansionStatsLogic(
 
     override fun fetchVillageNoList(): List<Int> {
         return try {
-            val response = restTemplate.getForObject(url, WolfMansionResponse::class.java)
-            response!!.list.map { it.id }
+            val latestVillageNo = restTemplate.getForObject(
+                "https://wolfort.net/wolf-mansion/village-record/latest-vid",
+                LatestVillageNo::class.java
+            )
+            return (1..latestVillageNo!!.vid).toList()
         } catch (e: RuntimeException) {
             logger.error(e.message, e)
             listOf()
@@ -31,7 +34,7 @@ class UpdateWolfMansionStatsLogic(
         val response = restTemplate.getForObject("$url?vid=${villageNo}", WolfMansionResponse::class.java) ?: return null
         if (response.list.isEmpty()) return null
         val record = response.list.first()
-
+        if (record.status == "廃村") return null
         return VillageStats(
             villageName = record.name,
             villageNo = record.id,
@@ -50,4 +53,6 @@ class UpdateWolfMansionStatsLogic(
             }
         )
     }
+
+    data class LatestVillageNo(val vid: Int)
 }

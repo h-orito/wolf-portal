@@ -10,11 +10,11 @@ data class HowlingWolfVillageParticipantRecord(
     @JsonProperty("other_site_user_id")
     val otherSiteUserId: String?,
     @JsonProperty("skill_name")
-    val skillName: String,
+    val skillName: String?,
     val dead: Boolean,
     @JsonProperty("dead_day")
     val deadDay: Int?,
     @JsonProperty("dead_reason")
     val deadReason: String?,
-    val win: Boolean
+    val win: Boolean?
 )
