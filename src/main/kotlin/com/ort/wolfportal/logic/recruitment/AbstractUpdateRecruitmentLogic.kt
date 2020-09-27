@@ -11,6 +11,7 @@ import com.ort.dbflute.exentity.CountryProgressDetail
 import com.ort.dbflute.exentity.CountryRecruitment
 import com.ort.dbflute.exentity.CountryRecruitmentDetail
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.cache.annotation.CacheEvict
 import org.springframework.stereotype.Component
 import java.time.LocalDateTime
 import kotlin.collections.Map.Entry
@@ -31,6 +32,7 @@ abstract class AbstractUpdateRecruitmentLogic {
 
     abstract fun scraping(): CountryVillageStatusDto
 
+    @CacheEvict("recruit", key = "'recruit'")
     fun deleteInsertCountryRecruitment(countryId: Int, countryRecruitmentInfo: CountryVillageStatusDto) {
         // 登録済みの募集状況は削除
         deleteCountryVillages(countryId)

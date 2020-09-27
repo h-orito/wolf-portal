@@ -2,7 +2,6 @@ package com.ort.wolfportal.api.controller
 
 import com.ort.dbflute.exbhv.CountryBhv
 import com.ort.dbflute.exbhv.RecruitStatsBhv
-import com.ort.dbflute.exentity.Country
 import com.ort.dbflute.exentity.CountryProgress
 import com.ort.dbflute.exentity.CountryRecruitment
 import com.ort.dbflute.exentity.RecruitStats
@@ -11,6 +10,7 @@ import com.ort.wolfportal.api.view.IndexContentResult
 import com.ort.wolfportal.api.view.RecruitmentGraphResponse
 import com.ort.wolfportal.logic.recruitment.AbstractUpdateRecruitmentLogic
 import com.ort.wolfportal.logic.recruitment.ItemKey
+import com.ort.wolfportal.logic.recruitment.RecruitmentLogic
 import com.ort.wolfportal.logic.recruitment.UpdateAbyssBlueRecruitmentLogic
 import com.ort.wolfportal.logic.recruitment.UpdateAbyssRedRecruitmentLogic
 import com.ort.wolfportal.logic.recruitment.UpdateChitoseRecruitmentLogic
@@ -32,7 +32,6 @@ import com.ort.wolfportal.logic.recruitment.UpdateRuruServerRecruitmentLogic
 import com.ort.wolfportal.logic.recruitment.UpdateSebasRecruitmentLogic
 import com.ort.wolfportal.logic.recruitment.UpdateUrikaRecruitmentLogic
 import com.ort.wolfportal.logic.recruitment.UpdateWerewolfMansionRecruitmentLogic
-import org.dbflute.cbean.result.ListResultBean
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
@@ -65,7 +64,8 @@ class RecruitmentController(
     private val updateJinroOnlineXRecruitmentLogic: UpdateJinroOnlineXRecruitmentLogic,
     private val updateJinroOnlineRecruitmentLogic: UpdateJinroOnlineRecruitmentLogic,
     private val updateRuruServerRecruitmentLogic: UpdateRuruServerRecruitmentLogic,
-    private val updateHowlingWolfRecruitmentLogic: UpdateHowlingWolfRecruitmentLogic
+    private val updateHowlingWolfRecruitmentLogic: UpdateHowlingWolfRecruitmentLogic,
+    private val recruitmentLogic: RecruitmentLogic
 ) {
 
     // ===================================================================================
@@ -73,7 +73,7 @@ class RecruitmentController(
     //                                                                             =======
     @GetMapping("/recruitment")
     fun init(model: Model): String {
-        val countryList = selectCountryList()
+        val countryList = recruitmentLogic.selectCountryList()
         model.addAttribute("content", IndexContentResult(countryList))
         return "recruitment"
     }
@@ -105,7 +105,7 @@ class RecruitmentController(
     //                                                                              Update
     //                                                                              ======
     private fun insertStats() {
-        val countryList = selectCountryList()
+        val countryList = recruitmentLogic.selectCountryList()
         val recruitingVillageList = countryList.flatMap { it.countryRecruitmentList }
         val progressVillageList = countryList.flatMap { it.countryProgressList }
         val recruitStats = RecruitStats()
@@ -114,23 +114,6 @@ class RecruitmentController(
             calculateRecParticipateNum(recruitingVillageList) + calculateProgressParticipateNum(progressVillageList)
         recruitStats.statsDatetime = LocalDateTime.now()
         recruitStatsBhv.insert(recruitStats)
-    }
-
-    // ===================================================================================
-    //                                                                              Select
-    //                                                                              ======
-    private fun selectCountryList(): ListResultBean<Country> {
-        val countryList = countryBhv.selectList { cb ->
-            cb.query().setIsDisplay_Equal(true)
-            cb.query().addOrderBy_DisplayOrder_Asc()
-        }
-        countryBhv.load(countryList) { loader ->
-            loader.loadCountryRecruitment { cRecCB -> cRecCB.query().addOrderBy_DisplayOrder_Asc() }
-                .withNestedReferrer { cRecLoader -> cRecLoader.loadCountryRecruitmentDetail { cRecDetailCB -> } }
-            loader.loadCountryProgress { cRecCB -> cRecCB.query().addOrderBy_DisplayOrder_Asc() }
-                .withNestedReferrer { cRecLoader -> cRecLoader.loadCountryProgressDetail { cRecDetailCB -> } }
-        }
-        return countryList
     }
 
     // ===================================================================================
