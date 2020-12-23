@@ -5,13 +5,13 @@ import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Component
 
 @Component
-class UpdateGijiCrazyRecruitmentLogic(
+class UpdateGijiDaisRecruitmentLogic(
     val logic: GijiScrapingLogic,
     val slackLogic: SlackLogic
 ) : AbstractUpdateRecruitmentLogic() {
 
-    private val logger = LoggerFactory.getLogger(UpdateGijiCrazyRecruitmentLogic::class.java)
-    private val url = "http://crazy-crazy.sakura.ne.jp/crazy/sow.cgi"
+    private val logger = LoggerFactory.getLogger(UpdateGijiDaisRecruitmentLogic::class.java)
+    private val url = "http://dais.kokage.cc/dais/sow.cgi"
 
     override fun scraping(): CountryVillageStatusDto {
         try {

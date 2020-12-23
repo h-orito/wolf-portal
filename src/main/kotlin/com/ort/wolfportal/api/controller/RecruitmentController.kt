@@ -18,7 +18,7 @@ import com.ort.wolfportal.logic.recruitment.UpdateGetsurouSideERecruitmentLogic
 import com.ort.wolfportal.logic.recruitment.UpdateGetsurouSideHRecruitmentLogic
 import com.ort.wolfportal.logic.recruitment.UpdateGetsurouSideMRecruitmentLogic
 import com.ort.wolfportal.logic.recruitment.UpdateGijiCielRecruitmentLogic
-import com.ort.wolfportal.logic.recruitment.UpdateGijiCrazyRecruitmentLogic
+import com.ort.wolfportal.logic.recruitment.UpdateGijiDaisRecruitmentLogic
 import com.ort.wolfportal.logic.recruitment.UpdateGijiPerjuryRecruitmentLogic
 import com.ort.wolfportal.logic.recruitment.UpdateGijiXebecRecruitmentLogic
 import com.ort.wolfportal.logic.recruitment.UpdateHowlingWolfRecruitmentLogic
@@ -52,7 +52,7 @@ class RecruitmentController(
     private val updateMikazukiRecruitmentLogic: UpdateMikazukiRecruitmentLogic,
     private val updateGijiPerjuryRecruitmentLogic: UpdateGijiPerjuryRecruitmentLogic,
     private val updateGijiXebecRecruitmentLogic: UpdateGijiXebecRecruitmentLogic,
-    private val updateGijiCrazyRecruitmentLogic: UpdateGijiCrazyRecruitmentLogic,
+    private val updateGijiDaisRecruitmentLogic: UpdateGijiDaisRecruitmentLogic,
     private val updateGijiCielRecruitmentLogic: UpdateGijiCielRecruitmentLogic,
     private val updateSebasRecruitmentLogic: UpdateSebasRecruitmentLogic,
     private val updateRoseRecruitmentLogic: UpdateRoseRecruitmentLogic,
@@ -143,7 +143,7 @@ class RecruitmentController(
             7 -> return updateMikazukiRecruitmentLogic
             8 -> return updateGijiPerjuryRecruitmentLogic
             9 -> return updateGijiXebecRecruitmentLogic
-            10 -> return updateGijiCrazyRecruitmentLogic
+            10 -> return updateGijiDaisRecruitmentLogic
             11 -> return updateGijiCielRecruitmentLogic
             12 -> return updateSebasRecruitmentLogic
             13 -> return updateRoseRecruitmentLogic
