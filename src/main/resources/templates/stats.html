@@ -9,9 +9,6 @@
 	vertical-align: middle;
 }
 
-
-
-
     </style>
 </head>
 
@@ -56,6 +53,34 @@
                                     </div>
                                 </form>
                                 <form class="form-inline" style="margin-top: 10px;" data-user-id-form="23">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">ユーザID</span>
+                                            <input type="text" name="userId" class="form-control" placeholder="master">
+                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary" data-user>GO</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a layout:replace="~{parts/external-link::anchor('FIREWOLF', 'https://firewolf.netlify.app')}"></a>
+                            </td>
+                            <td>
+                                <a th:href="@{/stats/country/24/village-list}" class="btn btn-sm btn-primary">村一覧</a> <a
+                                    th:href="@{/stats/country/24/player-list}"
+                                    class="btn btn-sm btn-primary">ユーザ一覧</a><br>
+                                <form class="form-inline" style="margin-top: 10px;" data-village-no-form="24">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">村番号</span>
+                                            <input type="number" name="villageNo" class="form-control" placeholder="100" min="1" step="1">
+                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary" data-village>GO</a>
+                                        </div>
+                                    </div>
+                                </form>
+                                <form class="form-inline" style="margin-top: 10px;" data-user-id-form="24">
                                     <div class="form-group">
                                         <div class="input-group">
                                             <span class="input-group-addon">ユーザID</span>

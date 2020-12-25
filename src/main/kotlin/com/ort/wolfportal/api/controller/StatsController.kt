@@ -17,6 +17,7 @@ import com.ort.wolfportal.api.form.StatsVillageListForm
 import com.ort.wolfportal.api.view.PagingModel
 import com.ort.wolfportal.logic.stats.AbstractUpdateStatsLogic
 import com.ort.wolfportal.logic.stats.RematchLogic
+import com.ort.wolfportal.logic.stats.UpdateFireWolfStatsLogic
 import com.ort.wolfportal.logic.stats.UpdateGetsurouSideEStatsLogic
 import com.ort.wolfportal.logic.stats.UpdateGetsurouSideHStatsLogic
 import com.ort.wolfportal.logic.stats.UpdateGetsurouSideMStatsLogic
@@ -51,6 +52,7 @@ class StatsController(
     private val updateGetsurouSideEStatsLogic: UpdateGetsurouSideEStatsLogic,
     private val updateMikazukiStatsLogic: UpdateMikazukiStatsLogic,
     private val updateHowlingWolfStatsLogic: UpdateHowlingWolfStatsLogic,
+    private val updateFireWolfStatsLogic: UpdateFireWolfStatsLogic,
     private val updateWolfMansionStatsLogic: UpdateWolfMansionStatsLogic,
     private val rematchLogic: RematchLogic
 ) {
@@ -282,6 +284,7 @@ class StatsController(
             6 -> updateGetsurouSideEStatsLogic
             7 -> updateMikazukiStatsLogic
             23 -> updateHowlingWolfStatsLogic
+            24 -> updateFireWolfStatsLogic
             else -> throw IllegalStateException("invalid countryId")
         }
     }
