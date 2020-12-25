@@ -14,6 +14,7 @@ import com.ort.wolfportal.logic.recruitment.RecruitmentLogic
 import com.ort.wolfportal.logic.recruitment.UpdateAbyssBlueRecruitmentLogic
 import com.ort.wolfportal.logic.recruitment.UpdateAbyssRedRecruitmentLogic
 import com.ort.wolfportal.logic.recruitment.UpdateChitoseRecruitmentLogic
+import com.ort.wolfportal.logic.recruitment.UpdateFireWolfRecruitmentLogic
 import com.ort.wolfportal.logic.recruitment.UpdateGetsurouSideERecruitmentLogic
 import com.ort.wolfportal.logic.recruitment.UpdateGetsurouSideHRecruitmentLogic
 import com.ort.wolfportal.logic.recruitment.UpdateGetsurouSideMRecruitmentLogic
@@ -25,6 +26,7 @@ import com.ort.wolfportal.logic.recruitment.UpdateHowlingWolfRecruitmentLogic
 import com.ort.wolfportal.logic.recruitment.UpdateJinroLiteRecruitmentLogic
 import com.ort.wolfportal.logic.recruitment.UpdateJinroOnlineRecruitmentLogic
 import com.ort.wolfportal.logic.recruitment.UpdateJinroOnlineXRecruitmentLogic
+import com.ort.wolfportal.logic.recruitment.UpdateLastWolfRecruitmentLogic
 import com.ort.wolfportal.logic.recruitment.UpdateMikazukiRecruitmentLogic
 import com.ort.wolfportal.logic.recruitment.UpdateRealRecruitmentLogic
 import com.ort.wolfportal.logic.recruitment.UpdateRoseRecruitmentLogic
@@ -65,6 +67,8 @@ class RecruitmentController(
     private val updateJinroOnlineRecruitmentLogic: UpdateJinroOnlineRecruitmentLogic,
     private val updateRuruServerRecruitmentLogic: UpdateRuruServerRecruitmentLogic,
     private val updateHowlingWolfRecruitmentLogic: UpdateHowlingWolfRecruitmentLogic,
+    private val updateFireWolfRecruitmentLogic: UpdateFireWolfRecruitmentLogic,
+    private val updateLastWolfRecruitmentLogic: UpdateLastWolfRecruitmentLogic,
     private val recruitmentLogic: RecruitmentLogic
 ) {
 
@@ -157,6 +161,8 @@ class RecruitmentController(
             21 -> return updateJinroOnlineRecruitmentLogic
             22 -> return updateRuruServerRecruitmentLogic
             23 -> return updateHowlingWolfRecruitmentLogic
+            24 -> return updateFireWolfRecruitmentLogic
+            25 -> return updateLastWolfRecruitmentLogic
             else -> throw IllegalStateException("countryId is invalid.")
         }
     }

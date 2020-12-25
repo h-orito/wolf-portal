@@ -1,24 +1,26 @@
 country_id	country_name	country_top_page_url	display_order	is_crawl_fail	is_display
-2	人狼BBS:G	http://www.wolfg.x0.com/	1	FALSE	FALSE
-1	WOLF MANSION	https://wolfort.net/wolf-mansion/	2	FALSE	TRUE
-4	人狼物語 月狼国 side:M	http://managarmr.sakura.ne.jp/sow.cgi	3	FALSE	TRUE
-5	人狼物語 月狼国 side:H	http://marchocias.xsrv.jp/sow.cgi	4	FALSE	TRUE
-6	人狼物語 月狼国 side:E	http://hrodvitnir.sakura.ne.jp/sow.cgi	5	FALSE	TRUE
-7	人狼物語 三日月国	http://www.moonpupa.jp/wolf/sow/sow.cgi	6	FALSE	TRUE
-13	人狼物語 薔薇の下国	http://lup.lunare.org/sow/sow.cgi	7	FALSE	TRUE
-15	人狼物語 千夜国	http://chitose-azure.sakura.ne.jp/alf-laylah/sow/sow.cgi	8	FALSE	TRUE
-16	人狼物語 深海国（青）	http://chaos-circle.jp/abyss/sow.cgi	9	FALSE	TRUE
-17	人狼物語 深海国（赤）	http://red-abyss.net/abyss/sow.cgi	10	FALSE	TRUE
-3	人狼物語 瓜科国	http://melon-cirrus.sakura.ne.jp/sow/	11	FALSE	TRUE
-12	人狼物語 執事国	http://sebas.chips.jp/sow/sow.cgi	12	FALSE	TRUE
-18	人狼物語 リア充国	http://real.gunjobiyori.com/sow.cgi	13	FALSE	TRUE
-8	人狼議事 perjury rulez	http://perjury.rulez.jp/sow.cgi	14	FALSE	TRUE
-9	人狼議事 xebec	http://xebec.x0.to/xebec/sow.cgi	15	FALSE	TRUE
-10	人狼議事 dais	http://dais.kokage.cc/dais/sow.cgi	16	FALSE	TRUE
-11	人狼議事 ciel	http://ciel.moo.jp/cheat/sow.cgi	17	FALSE	TRUE
+2	人狼BBS:G	http://www.wolfg.x0.com/	4	FALSE	FALSE
+1	WOLF MANSION	https://wolfort.net/wolf-mansion/	5	FALSE	TRUE
+4	人狼物語 月狼国 side:M	http://managarmr.sakura.ne.jp/sow.cgi	6	FALSE	TRUE
+5	人狼物語 月狼国 side:H	http://marchocias.xsrv.jp/sow.cgi	7	FALSE	TRUE
+6	人狼物語 月狼国 side:E	http://hrodvitnir.sakura.ne.jp/sow.cgi	8	FALSE	TRUE
+7	人狼物語 三日月国	http://www.moonpupa.jp/wolf/sow/sow.cgi	9	FALSE	TRUE
+13	人狼物語 薔薇の下国	http://lup.lunare.org/sow/sow.cgi	10	FALSE	TRUE
+15	人狼物語 千夜国	http://chitose-azure.sakura.ne.jp/alf-laylah/sow/sow.cgi	11	FALSE	TRUE
+16	人狼物語 深海国（青）	http://chaos-circle.jp/abyss/sow.cgi	12	FALSE	TRUE
+17	人狼物語 深海国（赤）	http://red-abyss.net/abyss/sow.cgi	13	FALSE	TRUE
+3	人狼物語 瓜科国	http://melon-cirrus.sakura.ne.jp/sow/	14	FALSE	TRUE
+12	人狼物語 執事国	http://sebas.chips.jp/sow/sow.cgi	15	FALSE	TRUE
+18	人狼物語 リア充国	http://real.gunjobiyori.com/sow.cgi	16	FALSE	TRUE
+8	人狼議事 perjury rulez	http://perjury.rulez.jp/sow.cgi	17	FALSE	TRUE
+9	人狼議事 xebec	http://xebec.x0.to/xebec/sow.cgi	18	FALSE	TRUE
+10	人狼議事 dais	http://dais.kokage.cc/dais/sow.cgi	19	FALSE	TRUE
+11	人狼議事 ciel	http://ciel.moo.jp/cheat/sow.cgi	20	FALSE	TRUE
 14	人狼物語 象牙国	http://kids.sphere.sc/tabula/lupus/sow.cgi	100	FALSE	FALSE
-19	JinroLite	https://www.jinro-lite.com/	18	FALSE	TRUE
-20	人狼オンラインX	http://www.werewolfonline.net/	19	FALSE	TRUE
-21	人狼Online	https://zinro.net/m/	20	FALSE	TRUE
-22	人狼ゲーム るる鯖	https://ruru-jinro.net/	21	FALSE	TRUE
+19	JinroLite	https://www.jinro-lite.com/	21	FALSE	TRUE
+20	人狼オンラインX	http://www.werewolfonline.net/	22	FALSE	TRUE
+21	人狼Online	https://zinro.net/m/	23	FALSE	TRUE
+22	人狼ゲーム るる鯖	https://ruru-jinro.net/	24	FALSE	TRUE
 23	HOWLING WOLF	https://howling-wolf.com/	1	FALSE	TRUE
+24	FIREWOLF	https://firewolf.netlify.app	2	FALSE	TRUE
+25	LASTWOLF	https://lastwolf.netlify.app	3	FALSE	TRUE
