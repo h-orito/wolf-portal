@@ -27,6 +27,7 @@ import com.ort.wolfportal.logic.stats.UpdateWolfMansionStatsLogic
 import com.ort.wolfportal.logic.stats.UpdateWolfbbsGStatsLogic
 import org.dbflute.cbean.result.ListResultBean
 import org.dbflute.cbean.result.PagingResultBean
+import org.slf4j.LoggerFactory
 import org.springframework.data.domain.Pageable
 import org.springframework.data.domain.Sort
 import org.springframework.data.web.PageableDefault
@@ -56,6 +57,8 @@ class StatsController(
     private val updateWolfMansionStatsLogic: UpdateWolfMansionStatsLogic,
     private val rematchLogic: RematchLogic
 ) {
+
+    private val logger = LoggerFactory.getLogger(StatsController::class.java)
 
     @GetMapping("/stats")
     fun stats(): String = "stats"
@@ -160,6 +163,7 @@ class StatsController(
             try {
                 logic.fetchVillageInfo(vid)?.let { logic.upsertCountryStats(countryId, it) }
             } catch (e: Exception) {
+                logger.error(e.message, e)
                 return null
             }
         }

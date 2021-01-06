@@ -40,8 +40,8 @@ class UpdateWolfMansionStatsLogic(
             villageNo = record.id,
             villageUrl = record.url,
             villageStartDatetime = LocalDateTime.parse(record.startDatetime, formatter),
-            villageEndDatetime = LocalDateTime.parse(record.epilogueDatetime, formatter),
-            winCampName = record.winCampName,
+            villageEndDatetime = LocalDateTime.parse(record.epilogueDatetime!!, formatter),
+            winCampName = record.winCampName!!,
             playerStatsList = record.participantList.map {
                 VillagePlayerStats(
                     userId = it.userId,
