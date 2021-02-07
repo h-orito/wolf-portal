@@ -17,28 +17,24 @@ class UpdateJinroLiteRecruitmentLogic(
 
     override fun scraping(): CountryVillageStatusDto {
         return try {
-            var page = 1
             val recruitVillageList = mutableListOf<CountryVillageDto>()
             val progressVillageList = mutableListOf<CountryVillageDto>()
-            while (true) {
-                val doc = BrowserUtil.createConnectionAndConnect("$url/villages?page=$page").parse()
-                val table = doc.select("table.table-villages")[0]
-                val recruitVillages = table.select("tbody tr")
-                if (recruitVillages.isEmpty()) break
-                // 募集中
-                recruitVillageList.addAll(
-                    recruitVillages
-                        .filter { "募集中" == it.select("td")[3].text() }
-                        .mapNotNull { convertToCountryVillage(it) }
-                )
-                // 進行中
-                progressVillageList.addAll(
-                    recruitVillages
-                        .filter { "進行中" == it.select("td")[3].text() }
-                        .mapNotNull { convertToCountryVillage(it) }
-                )
-                page++
-            }
+            // 建てて放置されているので1ページ目のみ
+            val doc = BrowserUtil.createConnectionAndConnect("$url/villages?page=1").parse()
+            val table = doc.select("table.table-villages")[0]
+            val recruitVillages = table.select("tbody tr")
+            // 募集中
+            recruitVillageList.addAll(
+                recruitVillages
+                    .filter { "募集中" == it.select("td")[3].text() }
+                    .mapNotNull { convertToCountryVillage(it) }
+            )
+            // 進行中
+            progressVillageList.addAll(
+                recruitVillages
+                    .filter { "進行中" == it.select("td")[3].text() }
+                    .mapNotNull { convertToCountryVillage(it) }
+            )
             CountryVillageStatusDto(
                 isSuccess = true,
                 recruitVillageList = recruitVillageList,
