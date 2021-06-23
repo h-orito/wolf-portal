@@ -21,4 +21,4 @@ logging:
     org.springframework: INFO
     root: INFO
     org.seasar.dbflute: ERROR
-  file: /var/log/wolf-portal/tomcat.log
+  file.name: /var/log/wolf-portal.log
