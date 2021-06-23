@@ -44,7 +44,7 @@ dependencies {
     implementation("org.apache.tomcat:tomcat-jdbc:9.0.10")
     implementation("org.dbflute:dbflute-runtime:1.2.1")
     // mysql
-    implementation("mysql:mysql-connector-java:5.1.44")
+    implementation("mysql:mysql-connector-java:8.0.25")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
