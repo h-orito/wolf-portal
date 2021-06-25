@@ -18,10 +18,13 @@ abstract class AbstractUpdateStatsLogic {
 
     @Autowired
     private lateinit var villageBhv: VillageBhv
+
     @Autowired
     private lateinit var playerBhv: PlayerBhv
+
     @Autowired
     private lateinit var countryPlayerBhv: CountryPlayerBhv
+
     @Autowired
     private lateinit var villagePlayerStatsBhv: VillagePlayerStatsBhv
 
@@ -43,7 +46,7 @@ abstract class AbstractUpdateStatsLogic {
     private fun insertVillage(countryId: Int?, v: VillageStats): Int {
         val village = Village()
         village.countryId = countryId
-        village.villageName = remove4ByteStr(v.villageName)
+        village.villageName = v.villageName
         village.villageNo = v.villageNo
         village.villageUrl = v.villageUrl
         village.villageStartDatetime = v.villageStartDatetime
@@ -56,7 +59,7 @@ abstract class AbstractUpdateStatsLogic {
     private fun updateVillage(villageId: Int, v: VillageStats) {
         val village = Village()
         village.villageId = villageId
-        village.villageName = remove4ByteStr(v.villageName)
+        village.villageName = v.villageName
         village.villageNo = v.villageNo
         village.villageUrl = v.villageUrl
         village.villageStartDatetime = v.villageStartDatetime
@@ -69,7 +72,7 @@ abstract class AbstractUpdateStatsLogic {
         val cp = CountryPlayer()
         cp.countryId = countryId
         cp.playerId = playerId
-        cp.userId = remove4ByteStr(userId)
+        cp.userId = userId
         countryPlayerBhv.insert(cp)
         return cp.countryPlayerId
     }
@@ -80,21 +83,28 @@ abstract class AbstractUpdateStatsLogic {
         return player.playerId
     }
 
-    private fun insertVillaePlayerStats(villageId: Int, countryPlayerId: Int, v: com.ort.wolfportal.logic.stats.VillagePlayerStats) {
+    private fun insertVillaePlayerStats(
+        villageId: Int,
+        countryPlayerId: Int,
+        v: com.ort.wolfportal.logic.stats.VillagePlayerStats
+    ) {
         val stats = VillagePlayerStats()
         stats.countryPlayerId = countryPlayerId
         stats.villageId = villageId
-        stats.characterName = remove4ByteStr(v.characterName)
+        stats.characterName = v.characterName
         stats.skillName = v.skillName
         stats.winloseCodeAsWinLose = v.winlose
         stats.life = v.life
         villagePlayerStatsBhv.insert(stats)
     }
 
-    private fun updateVillagePlayerStats(villagePlayerStatsId: Int?, v: com.ort.wolfportal.logic.stats.VillagePlayerStats) {
+    private fun updateVillagePlayerStats(
+        villagePlayerStatsId: Int?,
+        v: com.ort.wolfportal.logic.stats.VillagePlayerStats
+    ) {
         val stats = VillagePlayerStats()
         stats.villagePlayerStatsId = villagePlayerStatsId
-        stats.characterName = remove4ByteStr(v.characterName)
+        stats.characterName = v.characterName
         stats.skillName = v.skillName
         stats.winloseCodeAsWinLose = v.winlose
         stats.life = v.life
@@ -132,7 +142,10 @@ abstract class AbstractUpdateStatsLogic {
         return insertVillage(countryId, villageStats)
     }
 
-    private fun insertCountryPlayerIfNeeded(countryId: Int, villagePlayer: com.ort.wolfportal.logic.stats.VillagePlayerStats): Int {
+    private fun insertCountryPlayerIfNeeded(
+        countryId: Int,
+        villagePlayer: com.ort.wolfportal.logic.stats.VillagePlayerStats
+    ): Int {
         val userId = villagePlayer.userId
         val countryPlayerList = selectCountryPlayer(userId)
         if (countryPlayerList.any { it.countryId == countryId }) {
@@ -164,9 +177,5 @@ abstract class AbstractUpdateStatsLogic {
             return
         }
         insertVillaePlayerStats(villageId, countryPlayerId, villagePlayer)
-    }
-
-    private fun remove4ByteStr(str: String): String {
-        return str.replace("[^\\u0000-\\uFFFF]".toRegex(), "")
     }
 }
