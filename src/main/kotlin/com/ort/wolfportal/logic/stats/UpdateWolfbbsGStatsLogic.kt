@@ -17,7 +17,7 @@ import java.util.regex.Pattern
 class UpdateWolfbbsGStatsLogic : AbstractUpdateStatsLogic() {
 
     private val logger = LoggerFactory.getLogger(UpdateWolfbbsGStatsLogic::class.java)
-    private val topPageUrl = "http://www.wolfg.x0.com/"
+    private val topPageUrl = "http://ninjinix.x0.com/wolfg/"
     private val vidStart = 1
     private val winVillageMessage = "全ての人狼を退治した……。人狼に怯える日々は去ったのだ！"
     private val participateElesStartStr = "楽天家 ゲルト （master）、死亡。村人だった。"
