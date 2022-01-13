@@ -11,11 +11,14 @@ data class FireWolfVillageParticipantRecord(
     val otherSiteUserId: String?,
     @JsonProperty("skill_name")
     val skillName: String?,
+    @JsonProperty("is_spectator")
     val spectator: Boolean,
+    @JsonProperty("is_dead")
     val dead: Boolean,
     @JsonProperty("dead_day")
     val deadDay: Int?,
     @JsonProperty("dead_reason")
     val deadReason: String?,
+    @JsonProperty("is_win")
     val win: Boolean?
 )
