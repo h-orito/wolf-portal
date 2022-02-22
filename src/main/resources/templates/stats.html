@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/layout}">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
 <head>
     <meta charset="utf-8"/>
     <title>各国戦績</title>
     <script src="../static/app/js/stats.js" th:src="@{/app/js/stats.js}"></script>
     <style>
-#sitelist th, #sitelist td {
-	vertical-align: middle;
-}
+        #sitelist th, #sitelist td {
+            vertical-align: middle;
+        }
 
     </style>
 </head>
@@ -47,8 +48,10 @@
                                     <div class="form-group">
                                         <div class="input-group">
                                             <span class="input-group-addon">村番号</span>
-                                            <input type="number" name="villageNo" class="form-control" placeholder="100" min="1" step="1">
-                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary" data-village>GO</a>
+                                            <input type="number" name="villageNo" class="form-control" placeholder="100"
+                                                   min="1" step="1">
+                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary"
+                                               data-village>GO</a>
                                         </div>
                                     </div>
                                 </form>
@@ -57,7 +60,8 @@
                                         <div class="input-group">
                                             <span class="input-group-addon">ユーザID</span>
                                             <input type="text" name="userId" class="form-control" placeholder="master">
-                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary" data-user>GO</a>
+                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary"
+                                               data-user>GO</a>
                                         </div>
                                     </div>
                                 </form>
@@ -75,8 +79,10 @@
                                     <div class="form-group">
                                         <div class="input-group">
                                             <span class="input-group-addon">村番号</span>
-                                            <input type="number" name="villageNo" class="form-control" placeholder="100" min="1" step="1">
-                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary" data-village>GO</a>
+                                            <input type="number" name="villageNo" class="form-control" placeholder="100"
+                                                   min="1" step="1">
+                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary"
+                                               data-village>GO</a>
                                         </div>
                                     </div>
                                 </form>
@@ -85,7 +91,8 @@
                                         <div class="input-group">
                                             <span class="input-group-addon">ユーザID</span>
                                             <input type="text" name="userId" class="form-control" placeholder="master">
-                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary" data-user>GO</a>
+                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary"
+                                               data-user>GO</a>
                                         </div>
                                     </div>
                                 </form>
@@ -103,8 +110,10 @@
                                     <div class="form-group">
                                         <div class="input-group">
                                             <span class="input-group-addon">村番号</span>
-                                            <input type="number" name="villageNo" class="form-control" placeholder="100" min="1" step="1">
-                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary" data-village>GO</a>
+                                            <input type="number" name="villageNo" class="form-control" placeholder="100"
+                                                   min="1" step="1">
+                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary"
+                                               data-village>GO</a>
                                         </div>
                                     </div>
                                 </form>
@@ -113,7 +122,8 @@
                                         <div class="input-group">
                                             <span class="input-group-addon">ユーザID</span>
                                             <input type="text" name="userId" class="form-control" placeholder="master">
-                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary" data-user>GO</a>
+                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary"
+                                               data-user>GO</a>
                                         </div>
                                     </div>
                                 </form>
@@ -121,113 +131,30 @@
                         </tr>
                         <tr>
                             <td>
-                                <a layout:replace="~{parts/external-link::anchor('人狼BBS:G', 'http://www.wolfg.x0.com/')}"></a>
+                                <a layout:replace="~{parts/external-link::anchor('星狩りの国', 'http://star-hunter.sakura.ne.jp/sow.cgi')}"></a>
                             </td>
                             <td>
-                                <a th:href="@{/stats/country/2/village-list}" class="btn btn-sm btn-primary">村一覧</a> <a
-                                    th:href="@{/stats/country/2/player-list}"
+                                <a th:href="@{/stats/country/26/village-list}" class="btn btn-sm btn-primary">村一覧</a> <a
+                                    th:href="@{/stats/country/26/player-list}"
                                     class="btn btn-sm btn-primary">ユーザ一覧</a><br>
-                                <form class="form-inline" style="margin-top: 10px;" data-village-no-form="2">
+                                <form class="form-inline" style="margin-top: 10px;" data-village-no-form="26">
                                     <div class="form-group">
                                         <div class="input-group">
                                             <span class="input-group-addon">村番号</span>
-                                            <input type="number" name="villageNo" class="form-control" placeholder="100" min="1" step="1">
-                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary" data-village>GO</a>
+                                            <input type="number" name="villageNo" class="form-control" placeholder="100"
+                                                   min="1" step="1">
+                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary"
+                                               data-village>GO</a>
                                         </div>
                                     </div>
                                 </form>
-                                <form class="form-inline" style="margin-top: 10px;" data-user-id-form="2">
+                                <form class="form-inline" style="margin-top: 10px;" data-user-id-form="26">
                                     <div class="form-group">
                                         <div class="input-group">
                                             <span class="input-group-addon">ユーザID</span>
                                             <input type="text" name="userId" class="form-control" placeholder="master">
-                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary" data-user>GO</a>
-                                        </div>
-                                    </div>
-                                </form>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a layout:replace="~{parts/external-link::anchor('人狼物語 月狼国 side:M', 'http://managarmr.sakura.ne.jp/sow.cgi')}"></a>
-                            </td>
-                            <td>
-                                <a th:href="@{/stats/country/4/village-list}" class="btn btn-sm btn-primary">村一覧</a> <a
-                                    th:href="@{/stats/country/4/player-list}"
-                                    class="btn btn-sm btn-primary">ユーザ一覧</a><br>
-                                <form class="form-inline" style="margin-top: 10px;" data-village-no-form="4">
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">村番号</span>
-                                            <input type="number" name="villageNo" class="form-control" placeholder="100" min="1" step="1">
-                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary" data-village>GO</a>
-                                        </div>
-                                    </div>
-                                </form>
-                                <form class="form-inline" style="margin-top: 10px;" data-user-id-form="4">
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">ユーザID</span>
-                                            <input type="text" name="userId" class="form-control" placeholder="master">
-                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary" data-user>GO</a>
-                                        </div>
-                                    </div>
-                                </form>
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td>
-                                <a layout:replace="~{parts/external-link::anchor('人狼物語 月狼国 side:H', 'http://marchocias.xsrv.jp/sow.cgi')}"></a>
-                            </td>
-                            <td>
-                                <a th:href="@{/stats/country/5/village-list}" class="btn btn-sm btn-primary">村一覧</a> <a
-                                    th:href="@{/stats/country/5/player-list}"
-                                    class="btn btn-sm btn-primary">ユーザ一覧</a><br>
-                                <form class="form-inline" style="margin-top: 10px;" data-village-no-form="5">
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">村番号</span>
-                                            <input type="number" name="villageNo" class="form-control" placeholder="100" min="1" step="1">
-                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary" data-village>GO</a>
-                                        </div>
-                                    </div>
-                                </form>
-                                <form class="form-inline" style="margin-top: 10px;" data-user-id-form="5">
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">ユーザID</span>
-                                            <input type="text" name="userId" class="form-control" placeholder="master">
-                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary" data-user>GO</a>
-                                        </div>
-                                    </div>
-                                </form>
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td>
-                                <a layout:replace="~{parts/external-link::anchor('人狼物語 月狼国 side:E', 'http://hrodvitnir.sakura.ne.jp/sow.cgi')}"></a>
-                            </td>
-                            <td>
-                                <a th:href="@{/stats/country/6/village-list}" class="btn btn-sm btn-primary">村一覧</a> <a
-                                    th:href="@{/stats/country/6/player-list}"
-                                    class="btn btn-sm btn-primary">ユーザ一覧</a><br>
-                                <form class="form-inline" style="margin-top: 10px;" data-village-no-form="6">
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">村番号</span>
-                                            <input type="number" name="villageNo" class="form-control" placeholder="100" min="1" step="1">
-                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary" data-village>GO</a>
-                                        </div>
-                                    </div>
-                                </form>
-                                <form class="form-inline" style="margin-top: 10px;" data-user-id-form="6">
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">ユーザID</span>
-                                            <input type="text" name="userId" class="form-control" placeholder="master">
-                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary" data-user>GO</a>
+                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary"
+                                               data-user>GO</a>
                                         </div>
                                     </div>
                                 </form>
@@ -245,8 +172,10 @@
                                     <div class="form-group">
                                         <div class="input-group">
                                             <span class="input-group-addon">村番号</span>
-                                            <input type="number" name="villageNo" class="form-control" placeholder="100" min="1" step="1">
-                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary" data-village>GO</a>
+                                            <input type="number" name="villageNo" class="form-control" placeholder="100"
+                                                   min="1" step="1">
+                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary"
+                                               data-village>GO</a>
                                         </div>
                                     </div>
                                 </form>
@@ -255,7 +184,133 @@
                                         <div class="input-group">
                                             <span class="input-group-addon">ユーザID</span>
                                             <input type="text" name="userId" class="form-control" placeholder="master">
-                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary" data-user>GO</a>
+                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary"
+                                               data-user>GO</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a layout:replace="~{parts/external-link::anchor('人狼BBS:G', 'http://www.wolfg.x0.com/')}"></a>
+                            </td>
+                            <td>
+                                <a th:href="@{/stats/country/2/village-list}" class="btn btn-sm btn-primary">村一覧</a> <a
+                                    th:href="@{/stats/country/2/player-list}"
+                                    class="btn btn-sm btn-primary">ユーザ一覧</a><br>
+                                <form class="form-inline" style="margin-top: 10px;" data-village-no-form="2">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">村番号</span>
+                                            <input type="number" name="villageNo" class="form-control" placeholder="100"
+                                                   min="1" step="1">
+                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary"
+                                               data-village>GO</a>
+                                        </div>
+                                    </div>
+                                </form>
+                                <form class="form-inline" style="margin-top: 10px;" data-user-id-form="2">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">ユーザID</span>
+                                            <input type="text" name="userId" class="form-control" placeholder="master">
+                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary"
+                                               data-user>GO</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a layout:replace="~{parts/external-link::anchor('人狼物語 月狼国 side:M', 'http://marchocias.xsrv.jp/sideM/sow.cgi')}"></a>
+                            </td>
+                            <td>
+                                <a th:href="@{/stats/country/4/village-list}" class="btn btn-sm btn-primary">村一覧</a> <a
+                                    th:href="@{/stats/country/4/player-list}"
+                                    class="btn btn-sm btn-primary">ユーザ一覧</a><br>
+                                <form class="form-inline" style="margin-top: 10px;" data-village-no-form="4">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">村番号</span>
+                                            <input type="number" name="villageNo" class="form-control" placeholder="100"
+                                                   min="1" step="1">
+                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary"
+                                               data-village>GO</a>
+                                        </div>
+                                    </div>
+                                </form>
+                                <form class="form-inline" style="margin-top: 10px;" data-user-id-form="4">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">ユーザID</span>
+                                            <input type="text" name="userId" class="form-control" placeholder="master">
+                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary"
+                                               data-user>GO</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a layout:replace="~{parts/external-link::anchor('人狼物語 月狼国 side:H', 'http://marchocias.xsrv.jp/sideH/sow.cgi')}"></a>
+                            </td>
+                            <td>
+                                <a th:href="@{/stats/country/5/village-list}" class="btn btn-sm btn-primary">村一覧</a> <a
+                                    th:href="@{/stats/country/5/player-list}"
+                                    class="btn btn-sm btn-primary">ユーザ一覧</a><br>
+                                <form class="form-inline" style="margin-top: 10px;" data-village-no-form="5">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">村番号</span>
+                                            <input type="number" name="villageNo" class="form-control" placeholder="100"
+                                                   min="1" step="1">
+                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary"
+                                               data-village>GO</a>
+                                        </div>
+                                    </div>
+                                </form>
+                                <form class="form-inline" style="margin-top: 10px;" data-user-id-form="5">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">ユーザID</span>
+                                            <input type="text" name="userId" class="form-control" placeholder="master">
+                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary"
+                                               data-user>GO</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <a layout:replace="~{parts/external-link::anchor('人狼物語 月狼国 side:E', 'http://marchocias.xsrv.jp/sideE/sow.cgi')}"></a>
+                            </td>
+                            <td>
+                                <a th:href="@{/stats/country/6/village-list}" class="btn btn-sm btn-primary">村一覧</a> <a
+                                    th:href="@{/stats/country/6/player-list}"
+                                    class="btn btn-sm btn-primary">ユーザ一覧</a><br>
+                                <form class="form-inline" style="margin-top: 10px;" data-village-no-form="6">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">村番号</span>
+                                            <input type="number" name="villageNo" class="form-control" placeholder="100"
+                                                   min="1" step="1">
+                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary"
+                                               data-village>GO</a>
+                                        </div>
+                                    </div>
+                                </form>
+                                <form class="form-inline" style="margin-top: 10px;" data-user-id-form="6">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">ユーザID</span>
+                                            <input type="text" name="userId" class="form-control" placeholder="master">
+                                            <a href="javascript:void(0)" class="input-group-addon btn bg-primary"
+                                               data-user>GO</a>
                                         </div>
                                     </div>
                                 </form>
