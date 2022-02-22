@@ -18,8 +18,8 @@ map:{
     ; driver   = com.mysql.jdbc.Driver
     ; url      = jdbc:mysql://localhost:3306/wportaldb?characterEncoding=UTF-8
     ; schema   = 
-    ; user     = wportal
-    ; password = wport@1
+    ; user     = wportaluser
+    ; password = wportalpass
 
     # /- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     # o propertiesMap: (NotRequired - Default map:{})

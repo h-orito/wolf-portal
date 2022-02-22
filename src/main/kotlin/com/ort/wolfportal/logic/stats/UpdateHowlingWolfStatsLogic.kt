@@ -31,7 +31,8 @@ class UpdateHowlingWolfStatsLogic(
     }
 
     override fun fetchVillageInfo(villageNo: Int): VillageStats? {
-        val response = restTemplate.getForObject("$url?vid=${villageNo}", HowlingWolfResponse::class.java) ?: return null
+        val response =
+            restTemplate.getForObject("$url?vid=${villageNo}", HowlingWolfResponse::class.java) ?: return null
         if (response.list.isEmpty()) return null
         val record = response.list.first()
         if (record.status == "廃村") return null

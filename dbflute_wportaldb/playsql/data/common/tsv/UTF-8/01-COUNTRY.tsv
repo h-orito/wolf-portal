@@ -1,9 +1,9 @@
 country_id	country_name	country_top_page_url	display_order	is_crawl_fail	is_display
 2	人狼BBS:G	http://www.wolfg.x0.com/	4	FALSE	FALSE
 1	WOLF MANSION	https://wolfort.net/wolf-mansion/	5	FALSE	TRUE
-4	人狼物語 月狼国 side:M	http://managarmr.sakura.ne.jp/sow.cgi	6	FALSE	TRUE
-5	人狼物語 月狼国 side:H	http://marchocias.xsrv.jp/sow.cgi	7	FALSE	TRUE
-6	人狼物語 月狼国 side:E	http://hrodvitnir.sakura.ne.jp/sow.cgi	8	FALSE	TRUE
+4	人狼物語 月狼国 side:M	http://marchocias.xsrv.jp/sideM/sow.cgi	106	FALSE	FALSE
+5	人狼物語 月狼国 side:H	http://marchocias.xsrv.jp/sideH/sow.cgi	107	FALSE	FALSE
+6	人狼物語 月狼国 side:E	http://marchocias.xsrv.jp/sideE/sow.cgi	108	FALSE	FALSE
 7	人狼物語 三日月国	http://www.moonpupa.jp/wolf/sow/sow.cgi	9	FALSE	TRUE
 13	人狼物語 薔薇の下国	http://lup.lunare.org/sow/sow.cgi	10	FALSE	TRUE
 15	人狼物語 千夜国	http://chitose-azure.sakura.ne.jp/alf-laylah/sow/sow.cgi	11	FALSE	TRUE
@@ -24,3 +24,4 @@ country_id	country_name	country_top_page_url	display_order	is_crawl_fail	is_disp
 23	HOWLING WOLF	https://howling-wolf.com/	1	FALSE	TRUE
 24	FIREWOLF	https://firewolf.netlify.app	2	FALSE	TRUE
 25	LASTWOLF	https://lastwolf.netlify.app	3	FALSE	TRUE
+26	星狩りの国	http://star-hunter.sakura.ne.jp/sow.cgi	6	FALSE	TRUE
