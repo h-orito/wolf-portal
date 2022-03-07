@@ -23,6 +23,7 @@ import com.ort.wolfportal.logic.stats.UpdateGetsurouSideHStatsLogic
 import com.ort.wolfportal.logic.stats.UpdateGetsurouSideMStatsLogic
 import com.ort.wolfportal.logic.stats.UpdateHowlingWolfStatsLogic
 import com.ort.wolfportal.logic.stats.UpdateMikazukiStatsLogic
+import com.ort.wolfportal.logic.stats.UpdateStarHunterStatsLogic
 import com.ort.wolfportal.logic.stats.UpdateWolfMansionStatsLogic
 import com.ort.wolfportal.logic.stats.UpdateWolfbbsGStatsLogic
 import org.dbflute.cbean.result.ListResultBean
@@ -55,6 +56,7 @@ class StatsController(
     private val updateHowlingWolfStatsLogic: UpdateHowlingWolfStatsLogic,
     private val updateFireWolfStatsLogic: UpdateFireWolfStatsLogic,
     private val updateWolfMansionStatsLogic: UpdateWolfMansionStatsLogic,
+    private val updateStarHunterStatsLogic: UpdateStarHunterStatsLogic,
     private val rematchLogic: RematchLogic
 ) {
 
@@ -96,7 +98,8 @@ class StatsController(
         val village = selectVillage(villageId)
         val villageModel = mappingToVillage(village)
         model.addAttribute("village", villageModel)
-        val country = countryBhv.selectEntityWithDeletedCheck { cb -> cb.query().setCountryId_Equal(village.getCountryId()) }
+        val country =
+            countryBhv.selectEntityWithDeletedCheck { cb -> cb.query().setCountryId_Equal(village.getCountryId()) }
         val countryModel = mappingToCountry(country)
         model.addAttribute("country", countryModel)
         val rematchList = rematchLogic.selectRematchList(village)
@@ -107,7 +110,12 @@ class StatsController(
     @GetMapping("/stats/player/{playerId}")
     fun player(
         @PathVariable playerId: Int,
-        @PageableDefault(size = 10, page = 1, direction = Sort.Direction.DESC, sort = ["villageStartDatetime"]) pageable: Pageable,
+        @PageableDefault(
+            size = 10,
+            page = 1,
+            direction = Sort.Direction.DESC,
+            sort = ["villageStartDatetime"]
+        ) pageable: Pageable,
         @ModelAttribute("searchForm") form: StatsPlayerForm, model: Model
     ): String {
         val player = selectPlayer(playerId)
@@ -124,7 +132,12 @@ class StatsController(
     fun countryPlayer(
         @PathVariable countryId: Int,
         @PathVariable countryPlayerId: Int,
-        @PageableDefault(size = 10, page = 1, direction = Sort.Direction.DESC, sort = ["villageStartDatetime"]) pageable: Pageable,
+        @PageableDefault(
+            size = 10,
+            page = 1,
+            direction = Sort.Direction.DESC,
+            sort = ["villageStartDatetime"]
+        ) pageable: Pageable,
         @ModelAttribute("searchForm") form: StatsPlayerForm,
         model: Model
     ): String {
@@ -184,7 +197,9 @@ class StatsController(
     ): PagingResultBean<Village> {
         return villageBhv.selectPage { cb ->
             cb.query().setCountryId_Equal(countryId)
-            form.villageName?.let { if (it.isNotEmpty()) cb.query().setVillageName_LikeSearch(it) { op -> op.likeContain() } }
+            form.villageName?.let {
+                if (it.isNotEmpty()) cb.query().setVillageName_LikeSearch(it) { op -> op.likeContain() }
+            }
             cb.paging(pageable.pageSize, pageable.pageNumber)
             cb.query().addOrderBy_VillageNo_Desc()
         }
@@ -289,11 +304,16 @@ class StatsController(
             7 -> updateMikazukiStatsLogic
             23 -> updateHowlingWolfStatsLogic
             24 -> updateFireWolfStatsLogic
+            26 -> updateStarHunterStatsLogic
             else -> throw IllegalStateException("invalid countryId")
         }
     }
 
-    private fun detectTargetVillageNoList(countryId: Int, form: SaveStatsForm, logic: AbstractUpdateStatsLogic): List<Int> {
+    private fun detectTargetVillageNoList(
+        countryId: Int,
+        form: SaveStatsForm,
+        logic: AbstractUpdateStatsLogic
+    ): List<Int> {
         form.villageNo?.let { return listOf(it) }
         form.villageId?.let {
             val village = villageBhv.selectEntityWithDeletedCheck { cb ->
