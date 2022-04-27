@@ -14,7 +14,7 @@ class UpdateFireWolfStatsLogic(
 ) : AbstractUpdateStatsLogic() {
 
     private val logger = LoggerFactory.getLogger(UpdateFireWolfStatsLogic::class.java)
-    private val url = "https://wolfort.net/firewolf/village-record/list"
+    private val url = "https://wolfort.dev/firewolf/village-record/list"
     private val formatter = DateTimeFormatter.ofPattern("uuuu/MM/dd HH:mm")
 
     override fun fetchVillageNoList(): List<Int> {
