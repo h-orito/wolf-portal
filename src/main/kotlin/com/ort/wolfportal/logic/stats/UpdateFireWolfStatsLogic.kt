@@ -20,7 +20,7 @@ class UpdateFireWolfStatsLogic(
     override fun fetchVillageNoList(): List<Int> {
         return try {
             val latestVillageNo = restTemplate.getForObject(
-                "https://wolfort.net/firewolf/village-record/latest-vid",
+                "https://wolfort.dev/firewolf/village-record/latest-vid",
                 LatestVillageNo::class.java
             )
             return (1..latestVillageNo!!.vid).toList()

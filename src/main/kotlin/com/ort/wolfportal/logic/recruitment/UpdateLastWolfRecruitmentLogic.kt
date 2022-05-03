@@ -15,7 +15,7 @@ class UpdateLastWolfRecruitmentLogic(
 ) : AbstractUpdateRecruitmentLogic() {
 
     private val logger = LoggerFactory.getLogger(UpdateLastWolfRecruitmentLogic::class.java)
-    private val url = "https://wolfort.net/lastwolf/recruiting-village-list"
+    private val url = "https://wolfort.dev/lastwolf/recruiting-village-list"
 
     override fun scraping(): CountryVillageStatusDto {
         return try {
