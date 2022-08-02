@@ -6,7 +6,6 @@ import com.ort.wolfportal.logic.slack.SlackLogic
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Component
 import org.springframework.web.client.RestTemplate
-import java.util.*
 
 @Component
 class UpdateLastWolfRecruitmentLogic(
@@ -15,7 +14,7 @@ class UpdateLastWolfRecruitmentLogic(
 ) : AbstractUpdateRecruitmentLogic() {
 
     private val logger = LoggerFactory.getLogger(UpdateLastWolfRecruitmentLogic::class.java)
-    private val url = "https://wolfort.dev/lastwolf/recruiting-village-list"
+    private val url = "http://140.83.55.4/lastwolf/recruiting-village-list"
 
     override fun scraping(): CountryVillageStatusDto {
         return try {

@@ -14,13 +14,13 @@ class UpdateHowlingWolfStatsLogic(
 ) : AbstractUpdateStatsLogic() {
 
     private val logger = LoggerFactory.getLogger(UpdateHowlingWolfStatsLogic::class.java)
-    private val url = "https://wolfort.dev/howling-wolf/village-record/list"
+    private val url = "http://140.83.55.4/howling-wolf/village-record/list"
     private val formatter = DateTimeFormatter.ofPattern("uuuu/MM/dd HH:mm")
 
     override fun fetchVillageNoList(): List<Int> {
         return try {
             val latestVillageNo = restTemplate.getForObject(
-                "https://wolfort.dev/howling-wolf/village-record/latest-vid",
+                "http://140.83.55.4/howling-wolf/village-record/latest-vid",
                 LatestVillageNo::class.java
             )
             return (1..latestVillageNo!!.vid).toList()

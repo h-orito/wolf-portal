@@ -4,8 +4,8 @@ plugins {
     java
     id("org.springframework.boot") version "2.3.0.RELEASE"
     id("io.spring.dependency-management") version "1.0.9.RELEASE"
-    kotlin("jvm") version "1.3.72"
-    kotlin("plugin.spring") version "1.3.72"
+    kotlin("jvm") version "1.4.20"
+    kotlin("plugin.spring") version "1.4.20"
 }
 
 group = "com.ort"
@@ -42,8 +42,10 @@ dependencies {
     }
     implementation("org.apache.tomcat:tomcat-jdbc:9.0.10")
     implementation("org.dbflute:dbflute-runtime:1.2.1")
+    implementation("org.apache.httpcomponents:httpclient")
     // mysql
-    implementation("mysql:mysql-connector-java:5.1.44")
+    implementation("mysql:mysql-connector-java:8.0.25")
+
 
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
@@ -58,6 +60,6 @@ tasks.withType<Test> {
 tasks.withType<KotlinCompile> {
     kotlinOptions {
         freeCompilerArgs = listOf("-Xjsr305=strict")
-        jvmTarget = "1.8"
+        jvmTarget = "11"
     }
 }
