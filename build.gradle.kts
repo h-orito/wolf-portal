@@ -6,6 +6,7 @@ plugins {
     id("io.spring.dependency-management") version "1.0.9.RELEASE"
     kotlin("jvm") version "1.3.72"
     kotlin("plugin.spring") version "1.3.72"
+    id("com.google.cloud.tools.jib") version "2.6.0"
 }
 
 group = "com.ort"
@@ -59,5 +60,26 @@ tasks.withType<KotlinCompile> {
     kotlinOptions {
         freeCompilerArgs = listOf("-Xjsr305=strict")
         jvmTarget = "1.8"
+    }
+}
+
+jib {
+    from {
+        image = "arm64v8/openjdk:11"
+        platforms {
+            platform {
+                architecture = "arm64"
+                os = "linux"
+            }
+        }
+    }
+    to {
+        image = "ghcr.io/h-orito/wolf-mansion"
+    }
+    container {
+        jvmFlags = listOf(
+            "-server", "-Djava.awt.headless=true", "-Dspring.profiles.active=playground"
+        )
+        creationTime = "USE_CURRENT_TIMESTAMP"
     }
 }
