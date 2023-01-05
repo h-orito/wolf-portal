@@ -32,6 +32,7 @@ import com.ort.wolfportal.logic.recruitment.UpdateRealRecruitmentLogic
 import com.ort.wolfportal.logic.recruitment.UpdateRoseRecruitmentLogic
 import com.ort.wolfportal.logic.recruitment.UpdateRuruServerRecruitmentLogic
 import com.ort.wolfportal.logic.recruitment.UpdateSebasRecruitmentLogic
+import com.ort.wolfportal.logic.recruitment.UpdateStarHunterAkatsukiRecruitmentLogic
 import com.ort.wolfportal.logic.recruitment.UpdateStarHunterRecruitmentLogic
 import com.ort.wolfportal.logic.recruitment.UpdateUrikaRecruitmentLogic
 import com.ort.wolfportal.logic.recruitment.UpdateWerewolfMansionRecruitmentLogic
@@ -53,6 +54,7 @@ class RecruitmentController(
     private val updateGetsurouSideHRecruitmentLogic: UpdateGetsurouSideHRecruitmentLogic,
     private val updateGetsurouSideERecruitmentLogic: UpdateGetsurouSideERecruitmentLogic,
     private val updateStarHunterRecruitmentLogic: UpdateStarHunterRecruitmentLogic,
+    private val updateStarHunterAkatsukiRecruitmentLogic: UpdateStarHunterAkatsukiRecruitmentLogic,
     private val updateMikazukiRecruitmentLogic: UpdateMikazukiRecruitmentLogic,
     private val updateGijiPerjuryRecruitmentLogic: UpdateGijiPerjuryRecruitmentLogic,
     private val updateGijiXebecRecruitmentLogic: UpdateGijiXebecRecruitmentLogic,
@@ -166,6 +168,7 @@ class RecruitmentController(
             24 -> return updateFireWolfRecruitmentLogic
             25 -> return updateLastWolfRecruitmentLogic
             26 -> return updateStarHunterRecruitmentLogic
+            27 -> return updateStarHunterAkatsukiRecruitmentLogic
             else -> throw IllegalStateException("countryId is invalid.")
         }
     }

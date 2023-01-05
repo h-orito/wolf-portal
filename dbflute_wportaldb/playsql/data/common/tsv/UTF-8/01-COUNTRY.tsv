@@ -24,4 +24,5 @@ country_id	country_name	country_top_page_url	display_order	is_crawl_fail	is_disp
 23	HOWLING WOLF	https://howling-wolf.com/	1	FALSE	TRUE
 24	FIREWOLF	https://firewolf.netlify.app	2	FALSE	TRUE
 25	LASTWOLF	https://lastwolf.netlify.app	3	FALSE	TRUE
-26	星狩りの国	http://star-hunter.sakura.ne.jp/sow.cgi	6	FALSE	TRUE
+26	星狩りの国	https://star-hunter.sakura.ne.jp/sow.cgi	6	FALSE	TRUE
+27	星狩りの国-暁の街-	https://dawn-star.sakura.ne.jp/sow.cgi	7	FALSE	TRUE
