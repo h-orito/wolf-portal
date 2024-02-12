@@ -23,6 +23,7 @@ import com.ort.wolfportal.logic.stats.UpdateGetsurouSideHStatsLogic
 import com.ort.wolfportal.logic.stats.UpdateGetsurouSideMStatsLogic
 import com.ort.wolfportal.logic.stats.UpdateHowlingWolfStatsLogic
 import com.ort.wolfportal.logic.stats.UpdateMikazukiStatsLogic
+import com.ort.wolfportal.logic.stats.UpdateStarHunterAkatsukiStatsLogic
 import com.ort.wolfportal.logic.stats.UpdateStarHunterStatsLogic
 import com.ort.wolfportal.logic.stats.UpdateWolfMansionStatsLogic
 import com.ort.wolfportal.logic.stats.UpdateWolfbbsGStatsLogic
@@ -57,6 +58,7 @@ class StatsController(
     private val updateFireWolfStatsLogic: UpdateFireWolfStatsLogic,
     private val updateWolfMansionStatsLogic: UpdateWolfMansionStatsLogic,
     private val updateStarHunterStatsLogic: UpdateStarHunterStatsLogic,
+    private val updateStarHunterAkatsukiStatsLogic: UpdateStarHunterAkatsukiStatsLogic,
     private val rematchLogic: RematchLogic
 ) {
 
@@ -305,6 +307,7 @@ class StatsController(
             23 -> updateHowlingWolfStatsLogic
             24 -> updateFireWolfStatsLogic
             26 -> updateStarHunterStatsLogic
+            27 -> updateStarHunterAkatsukiStatsLogic
             else -> throw IllegalStateException("invalid countryId")
         }
     }
