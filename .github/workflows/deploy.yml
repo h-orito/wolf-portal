@@ -31,6 +31,11 @@ jobs:
     needs: build
     runs-on: [ self-hosted ]
     steps:
+      - name: install kubectl
+        run: |
+          curl -sSLo $RUNNER_TEMP/kubectl "https://dl.k8s.io/release/$(curl -sSL https://dl.k8s.io/release/stable.txt)/bin/linux/arm64/kubectl"
+          chmod +x $RUNNER_TEMP/kubectl
+
       - name: rollout restart
         run: |
-          kubectl rollout restart deployment wolf-portal
+          $RUNNER_TEMP/kubectl rollout restart deployment wolf-portal
