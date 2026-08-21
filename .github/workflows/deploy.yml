@@ -6,8 +6,8 @@ on:
       - master
 
 jobs:
-  delivery:
-    runs-on: [ self-hosted ]
+  build:
+    runs-on: ubuntu-24.04-arm
     steps:
       - name: clone repository
         uses: actions/checkout@v7
@@ -22,11 +22,15 @@ jobs:
         run: |
           ./gradlew jibDockerBuild
 
-      - name: deploy
+      - name: push image
         run: |
           echo "${{ secrets.PACKAGE_PAT }}" | docker login ghcr.io -u h-orito --password-stdin
           docker push ghcr.io/h-orito/wolf-portal
 
-      - name: release
+  release:
+    needs: build
+    runs-on: [ self-hosted ]
+    steps:
+      - name: rollout restart
         run: |
-          kubectl delete pod -l app=wolf-portal
+          kubectl rollout restart deployment wolf-portal
