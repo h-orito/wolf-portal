@@ -14,7 +14,7 @@ class UpdateFireWolfRecruitmentLogic(
 ) : AbstractUpdateRecruitmentLogic() {
 
     private val logger = LoggerFactory.getLogger(UpdateFireWolfRecruitmentLogic::class.java)
-    private val url = "http://140.83.55.4/firewolf/recruiting-village-list"
+    private val url = "https://wolfort.dev/firewolf/recruiting-village-list"
 
     override fun scraping(): CountryVillageStatusDto {
         return try {

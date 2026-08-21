@@ -15,7 +15,7 @@ class UpdateHowlingWolfRecruitmentLogic(
 ) : AbstractUpdateRecruitmentLogic() {
 
     private val logger = LoggerFactory.getLogger(UpdateHowlingWolfRecruitmentLogic::class.java)
-    private val url = "http://140.83.55.4/howling-wolf/recruiting-village-list"
+    private val url = "https://wolfort.dev/howling-wolf/recruiting-village-list"
 
     override fun scraping(): CountryVillageStatusDto {
         return try {
