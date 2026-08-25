@@ -114,7 +114,7 @@ Kotlin 版と異なる点: 戦績クローラは村ごとの失敗で止まら�
    - 26 国分の取得ロジックを移植 (対応表は下記)
 2. `crawler stats --country N [--village-no N | --ignore-exists]` を実装
    - 10 国分の戦績取得ロジックを移植
-3. CronJob を適用し、さくら VPS の cron を停止 (`deploy/` のテンプレートを infra リポジトリへ反映)
+3. CronJob を適用し、さくら VPS の cron を停止 (手順は wolf-portal-go の `deploy/README.md`)
    - Kotlin 側の `POST` エンドポイントは Phase 3 まで残す (手動再実行用)
 4. 1 国ずつ、Kotlin が書いたレコードと Go が書いたレコードを `COUNTRY_RECRUITMENT_DETAIL` / `COUNTRY_PROGRESS_DETAIL` で突き合わせて差分がないことを確認する
 
@@ -128,7 +128,6 @@ Kotlin 版と異なる点: 戦績クローラは村ごとの失敗で止まら�
 | 7 | 三日月 | sow.cgi |
 | 8 / 9 / 10 / 11 | 偽 perjury / xebec / dais / ciel | sow.cgi (`GijiScrapingLogic`) |
 | 13 | 薔薇 | sow.cgi |
-| 18 | リアル | sow.cgi |
 | 21 | 人狼オンライン | スクレイピング |
 | 23 | Howling Wolf | REST (`wolfort.dev/howling-wolf`) |
 | 24 | Fire Wolf | REST (`wolfort.dev/firewolf-api`) |
@@ -136,7 +135,7 @@ Kotlin 版と異なる点: 戦績クローラは村ごとの失敗で止まら�
 | 26 / 27 | Star Hunter / 暁 | sow.cgi |
 | 28 | 赤ずきんちゃんご用心 | REST (`garuneko.com/akazukin/villages.json`) |
 
-2 (人狼BBS)、14 (象牙国) は取得対象外。12 (執事)、15 (千夜)、16 / 17 (深海)、19 (JinroLite)、20 (人狼オンライン X)、22 (るる鯖) はサイトが消滅しているため移植せず、`COUNTRY.IS_DISPLAY = false` にして表示からも外す。人狼BBS G の戦績 (countryId 2) も新規村が増えないため移植しない。
+2 (人狼BBS)、14 (象牙国) は取得対象外。12 (執事)、15 (千夜)、16 / 17 (深海)、19 (JinroLite)、20 (人狼オンライン X)、22 (るる鯖) はサイトが消滅、18 (リア充) は新規村が作成されなくなったため移植せず、`COUNTRY.IS_DISPLAY = false` にして表示からも外す。人狼BBS G の戦績 (countryId 2) も新規村が増えないため移植しない。
 
 #### 戦績クローラ 国一覧
 
