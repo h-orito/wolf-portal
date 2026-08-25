@@ -172,6 +172,8 @@ Kotlin 版と異なる点: 戦績クローラは村ごとの失敗で止まら�
 
 ### Phase 2: Web サーバ移植
 
+完了 (2026-08-25)。ローカルで Kotlin 版と Go 版を同一 DB に向けて比較し、全 18 ページ × PC/SP でピクセル差分 0 (村検索の「進行中」テーブルの国の並び順のみ許容差分)。結果は wolf-portal-go の `tools/screenshot/report-phase2-local.md`。
+
 1. レイアウト (`layout.html` / `header.html` / `footer.html`) と静的ページ 4 本
 2. `/recruitment`、`/recruitment-graph`
 3. `/stats/**`、`/village-list`
