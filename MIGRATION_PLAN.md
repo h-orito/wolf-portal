@@ -127,13 +127,8 @@ Kotlin 版と異なる点: 戦績クローラは村ごとの失敗で止まら�
 | 4 / 5 / 6 | 月狼 M / H / E | sow.cgi (`GetsurouScrapingLogic`) |
 | 7 | 三日月 | sow.cgi |
 | 8 / 9 / 10 / 11 | 偽 perjury / xebec / dais / ciel | sow.cgi (`GijiScrapingLogic`) |
-| 12 | セバス | sow.cgi |
 | 13 | 薔薇 | sow.cgi |
-| 15 | ちとせ | sow.cgi |
-| 16 / 17 | Abyss 青 / 赤 | sow.cgi (`AbyssScrapingLogic`) |
 | 18 | リアル | sow.cgi |
-| 19 | JinroLite | スクレイピング |
-| 20 | 人狼オンライン X | REST |
 | 21 | 人狼オンライン | スクレイピング |
 | 22 | るる鯖 | スクレイピング |
 | 23 | Howling Wolf | REST (`wolfort.dev/howling-wolf`) |
@@ -142,7 +137,7 @@ Kotlin 版と異なる点: 戦績クローラは村ごとの失敗で止まら�
 | 26 / 27 | Star Hunter / 暁 | sow.cgi |
 | 28 | 赤ずきんちゃんご用心 | REST (`garuneko.com/akazukin/villages.json`) |
 
-2 (人狼BBS)、14 (象牙国) は取得対象外。人狼BBS G の戦績 (countryId 2) も新規村が増えないため移植しない。
+2 (人狼BBS)、14 (象牙国) は取得対象外。12 (執事)、15 (千夜)、16 / 17 (深海)、19 (JinroLite)、20 (人狼オンライン X) はサイトが消滅しているため移植せず、`COUNTRY.IS_DISPLAY = false` にして表示からも外す。人狼BBS G の戦績 (countryId 2) も新規村が増えないため移植しない。
 
 #### 戦績クローラ 国一覧
 
