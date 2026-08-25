@@ -14,7 +14,7 @@ data class AkazukinVillageDetail(
     /** 村URL */
     val url: String,
 
-    /** 状態 (prologue / progress / epilogue) */
+    /** 状態 (prologue / in_progress / epilogue) */
     val status: String,
 
     /** 1日の長さ (例: 10分) */

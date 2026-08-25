@@ -57,7 +57,7 @@ class UpdateAkazukinRecruitmentLogic(
     private fun createStatusString(v: AkazukinVillageDetail): String {
         return when (v.status) {
             "prologue" -> "募集中"
-            "progress" -> "${v.currentDay ?: ""}日目"
+            "in_progress" -> "${v.currentDay ?: ""}日目"
             "epilogue" -> "エピローグ"
             else -> v.status
         }
