@@ -12,6 +12,7 @@ import com.ort.wolfportal.logic.recruitment.AbstractUpdateRecruitmentLogic
 import com.ort.wolfportal.logic.recruitment.ItemKey
 import com.ort.wolfportal.logic.recruitment.RecruitmentLogic
 import com.ort.wolfportal.logic.recruitment.UpdateAbyssBlueRecruitmentLogic
+import com.ort.wolfportal.logic.recruitment.UpdateAkazukinRecruitmentLogic
 import com.ort.wolfportal.logic.recruitment.UpdateAbyssRedRecruitmentLogic
 import com.ort.wolfportal.logic.recruitment.UpdateChitoseRecruitmentLogic
 import com.ort.wolfportal.logic.recruitment.UpdateFireWolfRecruitmentLogic
@@ -73,6 +74,7 @@ class RecruitmentController(
     private val updateHowlingWolfRecruitmentLogic: UpdateHowlingWolfRecruitmentLogic,
     private val updateFireWolfRecruitmentLogic: UpdateFireWolfRecruitmentLogic,
     private val updateLastWolfRecruitmentLogic: UpdateLastWolfRecruitmentLogic,
+    private val updateAkazukinRecruitmentLogic: UpdateAkazukinRecruitmentLogic,
     private val recruitmentLogic: RecruitmentLogic
 ) {
 
@@ -169,6 +171,7 @@ class RecruitmentController(
             25 -> return updateLastWolfRecruitmentLogic
             26 -> return updateStarHunterRecruitmentLogic
             27 -> return updateStarHunterAkatsukiRecruitmentLogic
+            28 -> return updateAkazukinRecruitmentLogic
             else -> throw IllegalStateException("countryId is invalid.")
         }
     }
