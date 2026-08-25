@@ -69,7 +69,7 @@ MySQL のまま継続する。
 | スクレイピング | `goquery` + `golang.org/x/text/encoding/japanese` | jsoup 相当。sow.cgi 系の Shift_JIS / EUC-JP 対応 |
 | 静的アセット | `embed` で同梱。Bootstrap 3 / jQuery / Chart.js はそのまま | JS がほぼ無いため触らない |
 | コンテナ | multi-stage build → `gcr.io/distroless/static`、arm64 | イメージ 10〜15MB |
-| リポジトリ | 新規 `wolf-portal-go` | Gradle / DBFlute 資産と分離。移行完了後に本リポジトリをアーカイブ |
+| リポジトリ | 新規 [`h-orito/wolf-portal-go`](https://github.com/h-orito/wolf-portal-go) (private) | Gradle / DBFlute 資産と分離。移行完了後に本リポジトリをアーカイブ |
 
 ## リポジトリ構成
 
