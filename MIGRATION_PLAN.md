@@ -105,13 +105,16 @@ Web とクローラは同じ module・同じイメージとし、`args` のみ�
 
 先に実施する。効果が最も大きく、Web 側と独立して切り替えられる。
 
+進捗 (2026-08-25): 1〜2 の移植完了。`--dry-run` で全国を取得し、成否・項目の形式が本番と一致することを確認済み。
+Kotlin 版と異なる点: 戦績クローラは村ごとの失敗で止まらず次の村へ進み、最後に失敗をまとめて終了コード 1 で返す。
+
 1. `crawler recruitment [--country N] [--store]` を実装
    - 共通処理: 国ごとの delete-insert、`COUNTRY.IS_CRAWL_FAIL` / `LAST_UPDATE_DATETIME` 更新、サロゲートペア除去
    - `--store`: 募集中 + 進行中の村数と参加者数 (`participate_status` の `/` 前の数値合計) を `RECRUIT_STATS` に追加
    - 26 国分の取得ロジックを移植 (対応表は下記)
 2. `crawler stats --country N [--village-no N | --ignore-exists]` を実装
    - 10 国分の戦績取得ロジックを移植
-3. CronJob を適用し、さくら VPS の cron を停止
+3. CronJob を適用し、さくら VPS の cron を停止 (`deploy/` のテンプレートを infra リポジトリへ反映)
    - Kotlin 側の `POST` エンドポイントは Phase 3 まで残す (手動再実行用)
 4. 1 国ずつ、Kotlin が書いたレコードと Go が書いたレコードを `COUNTRY_RECRUITMENT_DETAIL` / `COUNTRY_PROGRESS_DETAIL` で突き合わせて差分がないことを確認する
 
@@ -124,29 +127,22 @@ Web とクローラは同じ module・同じイメージとし、`args` のみ�
 | 4 / 5 / 6 | 月狼 M / H / E | sow.cgi (`GetsurouScrapingLogic`) |
 | 7 | 三日月 | sow.cgi |
 | 8 / 9 / 10 / 11 | 偽 perjury / xebec / dais / ciel | sow.cgi (`GijiScrapingLogic`) |
-| 12 | セバス | sow.cgi |
 | 13 | 薔薇 | sow.cgi |
-| 15 | ちとせ | sow.cgi |
-| 16 / 17 | Abyss 青 / 赤 | sow.cgi (`AbyssScrapingLogic`) |
 | 18 | リアル | sow.cgi |
-| 19 | JinroLite | スクレイピング |
-| 20 | 人狼オンライン X | REST |
 | 21 | 人狼オンライン | スクレイピング |
-| 22 | るる鯖 | スクレイピング |
 | 23 | Howling Wolf | REST (`wolfort.dev/howling-wolf`) |
 | 24 | Fire Wolf | REST (`wolfort.dev/firewolf-api`) |
 | 25 | Last Wolf | REST (`wolfort.dev/lastwolf`) |
 | 26 / 27 | Star Hunter / 暁 | sow.cgi |
 | 28 | 赤ずきんちゃんご用心 | REST (`garuneko.com/akazukin/villages.json`) |
 
-2 (人狼BBS)、14 (象牙国) は取得対象外。
+2 (人狼BBS)、14 (象牙国) は取得対象外。12 (執事)、15 (千夜)、16 / 17 (深海)、19 (JinroLite)、20 (人狼オンライン X)、22 (るる鯖) はサイトが消滅しているため移植せず、`COUNTRY.IS_DISPLAY = false` にして表示からも外す。人狼BBS G の戦績 (countryId 2) も新規村が増えないため移植しない。
 
 #### 戦績クローラ 国一覧
 
 | countryId | 国 | cron 対象 |
 |---|---|---|
 | 1 | 人狼物語 | ○ |
-| 2 | 人狼BBS G | 手動のみ |
 | 4 / 5 / 6 | 月狼 M / H / E | 手動のみ |
 | 7 | 三日月 | ○ |
 | 23 | Howling Wolf | ○ |
